@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+# large intermediate geodata (regenerate with code/fetch_geodata.py)
+data/seismic/gem_faults_world.geojson
+data/admin/mpio_co.json
+outputs/hacienda_site.zip

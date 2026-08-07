@@ -1,0 +1,18 @@
+# Analysis + build pipeline for the Retirement Hacienda project
+numpy
+pandas
+matplotlib
+markdown
+requests
+geopandas
+shapely
+pyproj
+folium
+# --- optional, for the "unlocked locally" work (DEM slope, routing) ---
+# rasterio
+# rioxarray
+# xarray
+# richdem
+# osmnx
+# networkx
+# scikit-learn

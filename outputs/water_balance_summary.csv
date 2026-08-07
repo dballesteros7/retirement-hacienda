@@ -1,0 +1,6 @@
+town,elev,reliab,P,PET_HG,PET_Th,AI_HG,climate,deficit,def_mo,surplus,def_2050,def_2085hi,def_ElNino,defmo_ElNino
+sachica,2150,low,726,1676,781,0.43,semi-arid,950,12,0,1026,1136,1240,12
+tunja,2782,high,652,1316,657,0.5,semi-arid,663,12,0,732,831,924,12
+villa_de_leyva,2149,high,1006,1596,763,0.63,dry-subhumid,589,10,0,663,800,992,12
+el_colegio,1100,med,1168,1600,1160,0.73,sub-humid,432,9,0,490,638,899,12
+arcabuco,2600,med,1826,1233,676,1.48,humid,15,1,609,32,73,137,3

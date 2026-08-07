@@ -1,0 +1,12 @@
+site,nearest_active_fault,fault_km,slip_type,slip_rate,km_to_BOG_airport,km_to_Bogota,km_to_III_Tunja,km_to_II_LaMesa,km_nearest_II+
+El Colegio (seat),Usme,35.4,Normal-Dextral,"(3.0,1,5)",35.6,40.4,160.8,6.0,6.0
+Villa de Leyva (seat),ALTO DEL TRIGO FAULT,63.3,Reverse,,124.0,128.8,21.4,152.2,21.4
+Tunja (seat),,58.9,Reverse,,126.3,129.2,1.5,157.5,1.5
+Arcabuco,ALTO DEL TRIGO FAULT,64.3,Reverse,,141.0,145.7,25.8,169.0,25.8
+Santa Sofia,ALTO DEL TRIGO FAULT,52.1,Reverse,,127.1,132.9,33.2,153.3,33.2
+Gachantiva,ALTO DEL TRIGO FAULT,55.3,Reverse,,134.2,139.7,31.9,160.7,31.9
+Sachica,ALTO DEL TRIGO FAULT,63.7,Reverse,,118.3,123.0,21.5,146.8,21.5
+Sutamarchan,ALTO DEL TRIGO FAULT,54.4,Reverse,,117.2,122.7,30.6,144.0,30.6
+Tena,Usme,32.4,Normal-Dextral,"(3.0,1,5)",27.5,34.6,150.8,8.6,8.6
+San Antonio Teq.,Usme,26.5,Normal-Dextral,"(3.0,1,5)",24.4,29.8,150.3,12.7,12.7
+La Mesa,Honda,35.4,Reverse-Sinistral,"(0.5,0.1,1.0)",35.8,42.3,158.6,0.3,0.3
