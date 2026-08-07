@@ -71,6 +71,7 @@ Adding Moniquirá as its own unit means the wet flank **no longer wins every wei
 | `code/water_balance.py` | `code/data_inputs.py` (IDEAM normals) | `water_balance_summary.csv`, `fig_water_balance.png` |
 | `code/geo_metrics.py` | `data/seismic/gem_faults_co.geojson` | `geo_metrics.csv` (fault distances, accessibility) |
 | `code/slope_analysis.py` | Copernicus GLO-30 tile → `data/dem/` (cached, gitignored) | `slope_summary.csv`, `fig_slope.png` |
+| `code/masterplan.py` | inline 2026 unit rates | `masterplan_summary.csv`, `masterplan_budget_*.csv`, `masterplan_phases.csv`, `fig_masterplan.png` |
 | `code/scorecard.py` | inline scores | `scorecard_scores.csv`, `scorecard_data.json` |
 | `code/build_scorecard_html.py` | `scorecard_data.json` | `scorecard_interactive.html` |
 | `code/build_map.py` | `data/admin/*`, `data/seismic/*` | `hacienda_map.html` |
@@ -116,6 +117,11 @@ The original analysis ran in a sandbox whose network was allow-listed to PyPI + 
 - [x] ~~Compute real slope from a DEM~~ — done at **area level** (stage 3/10). **Still open per-parcel:** needs coordinates from the agencies, then a clip per boundary. C (La Hoya) and G (Papayal) remain the two that matter.
 - [ ] Exact NSR-10 **Aa/Av** for El Colegio, Villa de Leyva **and Moniquirá** (Apéndice A-4 / SGC portal).
 - [x] ~~Widen inventory via the blocked portals~~ — done for Moniquirá (22 listings, 5 new group-relevant). **Still open:** Chíquiza/Iguaque, and a direct approach to the agencies (**ATOS Inmobiliaria** holds most Arcabuco/Moniquirá raw land; **Casa 360** has H; **Rubén Quiroga** has I).
+- [x] ~~Photo-scrutinise every candidate~~ — done 2026-08-08, all 207 photos across 12 listings, in `docs/candidate_scrutiny.md`.
+- [ ] **Ask ATOS for E's matrícula** — the listing text says vereda **San Cristóbal**, the URL says Neval y Cruces. One of them is wrong.
+- [ ] **Get a geotechnical + hydrogeological survey on G before any offer.** The photos show limestone **karst** (ravine, outcrop, cave recess): voids under foundations, fast unpredictable groundwater, and septic fields that can reach the aquifer quickly. Budgeted at a 45 M contingency in `masterplan.py`.
+- [ ] **Ask Casa 360 for H's existing soil + water studies.** They already exist and answer the buildability question for free — the strongest single reason to look at H first.
+- [ ] **Open negotiations below asking on the ATOS six** (G, B, C, D, E, O) — all uploaded 12 Aug 2025 and unsold twelve months later; D offers permuta, H says negotiable.
 - [ ] **Chase the two new Moniquirá finds before committing to G:** **N** (40.96 ha at G's price/m², the only parcel above the 9.38 ha UAF → the only lawfully divisible one) and **K** (Neval y Cruces lots with individual matrículas already issued — verify the subdivision is lawful).
 - [ ] **Decide the climate fork with the group.** Both flanks are now scored: the wet flank leads four of five weightings, Moniquirá wins services-first, climate-first is a 0.3-point tie. The real trade is **Moniquirá's Nivel II hospital now vs Arcabuco's drought resilience over 30 years**. `scorecard.html` is the tool for that conversation — and it finally contains both sides of the fork.
 - [ ] **If Moniquirá:** price a potable-water treatment system into the build budget. Rural supply there is abundant but **not potable** — all four monitored aqueducts are IRCA "Riesgo Alto" with no treatment, including the Papayal one behind G's water claim.

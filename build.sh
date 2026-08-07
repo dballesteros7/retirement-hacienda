@@ -4,34 +4,37 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-echo "==> 1/10 water balance (Thornthwaite + Hargreaves, El Nino stress test)"
+echo "==> 1/11 water balance (Thornthwaite + Hargreaves, El Nino stress test)"
 python3 code/water_balance.py
 
-echo "==> 2/10 seismic fault distances + accessibility metrics"
+echo "==> 2/11 seismic fault distances + accessibility metrics"
 python3 code/geo_metrics.py
 
-echo "==> 3/10 DEM slope / buildability (Copernicus GLO-30)"
+echo "==> 3/11 DEM slope / buildability (Copernicus GLO-30)"
 python3 code/slope_analysis.py
 
-echo "==> 4/10 weighted scorecard + sensitivity"
+echo "==> 4/11 community masterplan + build budget"
+python3 code/masterplan.py
+
+echo "==> 5/11 weighted scorecard + sensitivity"
 python3 code/scorecard.py
 
-echo "==> 5/10 interactive scorecard HTML"
+echo "==> 6/11 interactive scorecard HTML"
 python3 code/build_scorecard_html.py
 
-echo "==> 6/10 interactive Leaflet map"
+echo "==> 7/11 interactive Leaflet map"
 python3 code/build_map.py
 
-echo "==> 7/10 final report HTML (from docs/final_report.md)"
+echo "==> 8/11 final report HTML (from docs/final_report.md)"
 python3 code/build_report_html.py
 
-echo "==> 8/10 friend-facing overview"
+echo "==> 9/11 friend-facing overview"
 python3 code/build_overview.py
 
-echo "==> 9/10 Arcabuco + Moniquirá property dossier"
+echo "==> 10/11 Arcabuco + Moniquirá property dossier"
 python3 code/build_dossier2.py
 
-echo "==> 10/10 assemble site bundle"
+echo "==> 11/11 assemble site bundle"
 python3 code/build_site2.py
 
 echo "==> publishing site files to repo root"

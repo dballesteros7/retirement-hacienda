@@ -44,23 +44,26 @@ WARM = (
 card("top warm", "most buildable value", "gold", "G · Moniquirá — Papayal (best buildable value)",
  "9.11 ha · <b>COP 390 M</b> (~4,300/m²) · no house · ~1,700 m · <i>ATOS Inmobiliaria</i>",
  "https://www.fincaraiz.com.co/finca-en-venta-en-papayal-moniquira/192742687", [I["G"]],
- ["<b>Photos:</b> gentle silvopasture with mature spreading shade trees and grazing cattle — the most obviously usable land in the set. The listing's \"90% aprovechable\" is plausible against the DEM, which puts 78% of ground in this elevation band under 15°.",
-  "<b>Still the best value per buildable hectare found.</b> Re-checked 8 Aug 2026: live, price unchanged at COP 390 M."],
- "<b>the water, hard.</b> G's headline claim is \"punto de agua veredal\" — and the Papayal vereda aqueduct is named in the Moniquirá PDM as <b>IRCA \"Riesgo Alto\" with no treatment and no disinfection</b>. Budget for your own potabilisation. Then: which subcatchment it drains to, the flat impression across the full 9 ha, access, title/UAF (9.38 ha).")
+ ["<b>Photos (all 10 reviewed):</b> a broad <b>flat valley-bottom pasture</b> and gentle silvopasture with mature shade trees and grazing cattle — genuinely usable ground. The <b>quebrada is real</b>: one frame shows a clear stream running over cobbles in deep shade, the kind that looks perennial.",
+  "<b>But two frames change the picture.</b> One shows a <b>deep ravine with near-vertical rock walls</b>, another an <b>exposed limestone outcrop with a cave recess</b>, and a third a steep forested cone rising straight off the pasture. This is <b>karst</b>, and it means possible voids under foundations, groundwater moving fast and unpredictably through fissures, and septic fields that can reach the aquifer far quicker than in clay. Against that, \"el 90% del terreno es aprovechable\" is a seller's number — a real share is gorge and steep forest.",
+  "<b>Leverage:</b> listed by ATOS on 12 Aug 2025 — <b>twelve months unsold</b>. Re-checked 8 Aug 2026: live, price unchanged at COP 390 M."],
+ "<b>the water and the ground, in that order.</b> G's headline claim is \"punto de agua veredal\" — and the Papayal vereda aqueduct is named in the Moniquirá PDM as <b>IRCA \"Riesgo Alto\" with no treatment and no disinfection</b>. Then a <b>geotechnical and hydrogeological survey before any offer</b>, because of the karst — not after. Then the flat impression across the full 9 ha, access, title/UAF (9.38 ha).")
 +
 card("top warm", "lowest diligence risk", "gold", "H · Moniquirá — lote (geotech already done)",
  "8.0 ha · <b>COP 720 M</b> · no house · ~1,700 m · <i>Casa 360</i>",
  "https://www.fincaraiz.com.co/lote-en-venta-en-moniquira/193363278", [I["H"]],
- ["<b>Photos:</b> open, gently-rolling ridgetop pasture with a magnificent moss-draped tree and sweeping valley panoramas.",
-  "<b>De-risked:</b> soil + water studies already done and handed over, fully fenced, 15 potreros, aljibe + pozo, 5 km access of which 3 km paved. The listing's \"2 m²\" area is a portal data error (it is ~8 ha). Listing states <i>libre de hipotecas</i> and <i>negociable</i>. Re-checked 8 Aug 2026: live at COP 720 M."],
+ ["<b>Photos (all 15 reviewed) — the best building land in the whole search.</b> Open, closely-grazed, gently-sloping ridgetop pasture, fenced post-and-wire, scattered mature spreading trees hung with Spanish moss and bromeliads, and a long panorama over the valley to distant blue ranges. <b>No rock outcrops, no ravines, no scrub</b> — several frames show parkland-like ground you could build on without earthworks.",
+  "<b>De-risked:</b> soil + water studies already done and handed over, fully fenced, 15 potreros, aljibe + pozo, 5 km access of which 3 km paved. The listing's \"2 m²\" area is a portal data error (it is ~8 ha). Listing states <i>libre de hipotecas</i> and <i>negociable</i>. Re-checked 8 Aug 2026: live at COP 720 M.",
+  "<b>That geotechnical study is the single most valuable document in this set</b> — it is exactly what every other parcel would have to pay for, and it is what decides whether a parcel is buildable at all."],
  "read the existing geotechnical and water studies before anything else — they are the reason to pay the premium over G. Then confirm area/boundaries, the last 2 km unpaved, title/UAF.")
 +
-card("warm", "spectacular water · steep", "", "E · Moniquirá — Neval y Cruces (the waterfalls)",
+card("warm", "⚠ wrong vereda on the portal", "", "E · Moniquirá — <s>Neval y Cruces</s> <b>San Cristóbal</b>",
  "8.5 ha · <b>COP 750 M</b> · no house · ~1,700 m",
  "https://www.fincaraiz.com.co/finca-en-venta-en-neval-y-cruces-moniquira/192899845", [I["E"]],
- ["<b>Photos:</b> genuine waterfalls cascading through dense subtropical forest — the most water-dramatic parcel in the whole search.",
-  "<b>Terrain:</b> waterfalls mean steep relief and heavy forest, so limited flat buildable land — the warm-flank equivalent of La Hoya. A 'wow' parcel more than an easy build site. <b>Note:</b> a separate seller is now marketing individually-titled lots in this same vereda (see K below), which may be the better way into Neval y Cruces."],
- "net buildable area vs steep forest; that the waterfall and creek are on-title and outside any ronda hídrica; access; and how it compares to the titled lots now offered in the same vereda.")
+ ["<b>⚠ Mis-tagged.</b> The URL — and every earlier version of this dossier — places E in vereda <b>Neval y Cruces</b>. The listing text says <b>\"vereda San Cristóbal\"</b>. Those are different veredas. This is exactly the portal mis-tagging caught repeatedly in this search: <b>verify on the matrícula, never the slug</b>.",
+  "<b>Photos:</b> a genuinely spectacular 20–30 m waterfall dropping through mossy cloud forest. But the listing text claims only <i>\"quebrada lindante\"</i>, pozos, nacederos and an acueducto point — <b>no waterfall is claimed in words</b>, so whether that fall is on-title or a neighbouring landmark is an open question. The ground around it is steep and forested.",
+  "<b>Demoted</b> — wrong vereda on record, a headline photo the text does not substantiate, and steep ground. Ask ATOS for the matrícula before spending more time. If Neval y Cruces itself is the attraction, <b>K</b> below offers individually-titled lots there."],
+ "which vereda it is actually in; whether the waterfall is on-title; net buildable area vs steep forest; and any ronda hídrica.")
 )
 
 COOL = (
@@ -150,6 +153,15 @@ HTML = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name
 <title>Arcabuco + Moniquirá — property dossier (v3, Moniquirá deep dive)</title><style>{CSS}</style></head><body><div class="wrap">
 <h1>Arcabuco + Moniquirá — property dossier</h1>
 <div class="sub">v3 · 8 August 2026. Rescoped to the two tracks still live, with the <b>Moniquirá deep dive</b> the group asked for. Villa de Leyva (F) and Santa Sofía (I) are dropped — F sits on the water-constrained side, I is 0.72 ha and too small for a group.</div>
+
+<div class="callout warn"><b>New in this pass (8 Aug 2026): every candidate's full gallery reviewed — 207 photos across 12 listings.</b> What it changed:
+<br>• <b>E is in the wrong vereda</b> on the portal — the text says San Cristóbal, the URL says Neval y Cruces.
+<br>• <b>G sits on karst</b> — visible limestone outcrops, a cave recess and a rock ravine. Foundations, septic siting and groundwater all need specialist input.
+<br>• <b>H is clearly the best building land</b>, not just the lowest-risk: clean, open, gently-sloping ground with nothing to clear.
+<br>• <b>N is a going concern</b>, not a bare parcel — a working trapiche, two houses, own aljibes, good soils, and the only candidate above the UAF.
+<br>• <b>M's springs are <i>veranera</i></b> (dry-season reliable) — the direct antidote to the flank's one measured weakness. <b>L comes with a water concession already granted.</b>
+<br>• <b>Six candidates have sat unsold with one agency (ATOS) for twelve months</b>, and two listings volunteer that they are negotiable or open to a swap. Nobody should pay asking.
+<br>Full per-parcel notes: <code>docs/candidate_scrutiny.md</code>. Build costs and the community masterplan: see the <a href="index.html">overview</a>.</div>
 
 <div class="callout key"><b>Why this revision exists.</b> Moniquirá had <i>never been analysed</i>. It was missing from the climate inputs (so it had no water balance), missing from the municipal-code list (so no fault, accessibility or map data), and missing from the scorecard — the very tool the brief called "the tool for that conversation" about the climate fork. The group was leaning toward the one option the analysis had never covered. It is now fully in the pipeline, and the numbers below are its first.</div>
 
