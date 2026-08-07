@@ -6,3 +6,6 @@ __pycache__/
 data/seismic/gem_faults_world.geojson
 data/admin/mpio_co.json
 outputs/hacienda_site.zip
+
+# cached Copernicus DEM tiles (regenerate with code/slope_analysis.py)
+data/dem/

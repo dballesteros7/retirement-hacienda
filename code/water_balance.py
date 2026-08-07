@@ -14,9 +14,14 @@ from data_inputs import NORMALS
 DAYS=np.array([31,28,31,30,31,30,31,31,30,31,30,31]); MID_DOY=np.array([15,45,74,105,135,166,196,227,258,288,319,349])
 MONTHS=['J','F','M','A','M','J','J','A','S','O','N','D']; WHC=100.0
 # est. diurnal temperature range (Tmax-Tmin, degC): sunny dry valleys large; humid/cold smaller
-DTR={'villa_de_leyva':14,'sachica':15,'tunja':12,'arcabuco':10,'el_colegio':10}
+# Moniquira = 10 (humid class, same as arcabuco/el_colegio): NASA POWER mean diurnal range there
+# is 9.1 C and climate-data.org's own max-min spread ~9.9 C. POWER is NOT used to reset the dry
+# valleys' DTR - its cells put Villa de Leyva and Sachica in one grid box and would flatten the
+# semi-arid signal this model exists to preserve.
+DTR={'villa_de_leyva':14,'sachica':15,'tunja':12,'arcabuco':10,'el_colegio':10,'moniquira':10}
 # department warming (IDEAM ensemble): Boyaca vs Cundinamarca
-DEPT_DT={'villa_de_leyva':(1.6,2.4),'sachica':(1.6,2.4),'tunja':(1.6,2.4),'arcabuco':(1.6,2.4),'el_colegio':(1.5,2.3)}
+DEPT_DT={'villa_de_leyva':(1.6,2.4),'sachica':(1.6,2.4),'tunja':(1.6,2.4),'arcabuco':(1.6,2.4),
+         'el_colegio':(1.5,2.3),'moniquira':(1.6,2.4)}
 
 def ra_mm(lat):  # extraterrestrial radiation, mm/day equivalent, per month (FAO-56)
     phi=math.radians(lat); out=[]
@@ -78,8 +83,8 @@ pd.set_option('display.width',200,'display.max_columns',30)
 print(df.to_string(index=False))
 
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-order=['arcabuco','el_colegio','villa_de_leyva','tunja','sachica']
-fig,axes=plt.subplots(1,5,figsize=(18,3.7),sharey=True)
+order=df.sort_values('AI_HG',ascending=False)['town'].tolist()   # wettest -> driest margin
+fig,axes=plt.subplots(1,len(order),figsize=(3.6*len(order),3.7),sharey=True)
 for ax,name in zip(axes,order):
     b=detail[name]; x=np.arange(12)
     ax.bar(x,b['P'],color='#3a7bd5',alpha=.75,label='P')

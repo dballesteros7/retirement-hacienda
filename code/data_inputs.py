@@ -30,6 +30,34 @@ NORMALS = {
         'T': [17.2, 17.6, 17.7, 17.8, 17.7, 17.6, 17.3, 17.4, 17.5, 17.2, 17.2, 17.1],
         'P_annual': 726, 'T_annual': 17.4, 'lat': 5.585,
         'src': 'SUBSTITUTED: Villa de Leyva x0.72 (dry-SW band)', 'reliability': 'low'},
+    # --- Moniquira (added 2026-08-08) ---------------------------------------------------
+    # CAUTION on the POMCA subcuenca table: the unit named "Rio Moniquira" (24010214) reads
+    # 1127.2 mm/yr, but that is NOT Moniquira's rainfall. That subcuenca has a mean elevation of
+    # 2560 m and its child micro-basins include Rio Sachica (2401021408) and Rio Cane
+    # (2401021409) - i.e. it is the whole Villa de Leyva / Sachica / Raquira drainage, whose
+    # semi-arid highlands (VdL 997, Sachica 726) drag the area-average down. Using 1127 for
+    # Moniquira would be a unit-attribution error.
+    # The units that actually contain the Moniquira parcels are the low-elevation ones around the
+    # town: Qda Agua Blanca (24010213) 1827.6, Dir Q Agua Blanca-R Moniquira (24010230) 1846.5,
+    # Dir R Moniquira-R Ubaza (24010231) 1869.6, Rio Ubaza (24010215) 1896.2 -> mean 1860 mm/yr.
+    # Cross-check: Arcabuco drains via Rio Pomeca (2401021501, a child of Rio Ubaza 24010215),
+    # whose POMCA value 1896.2 agrees with this file's independently-sourced Arcabuco 1826 to 4%.
+    # So Arcabuco and Moniquira get near-identical RAIN; what separates them is PET (4.8 C warmer).
+    # Monthly SHAPE from climate-data.org Moniquira (1991-2021, bimodal, no dry month) rescaled to
+    # the 1860 total. climate-data.org's own magnitude is not used: its Villa de Leyva page reads
+    # 1767 mm / 13.4 C against the IDEAM normal 997 mm / 16.9 C (+77% wet, -3.5 C), i.e. its
+    # municipal grid points sit too high in this terrain. Other estimates for Moniquira: NASA
+    # POWER ~1530 mm, climate-data.org de-biased by the VdL ratio ~1650 mm -> range 1530-1900.
+    'moniquira': {'elev': 1700,
+        'P': [67.6, 80.3, 128.1, 202.1, 244.8, 184.8, 170.8, 170.8, 198.9, 193.8, 133.9, 84.1],
+        'T': [18.5, 18.9, 18.9, 18.9, 19.0, 19.1, 19.0, 19.2, 19.1, 18.6, 18.2, 18.4],
+        'P_annual': 1860, 'T_annual': 18.8, 'lat': 5.876,
+        'src': 'P: Corpoboyaca POMCA Medio-Bajo Suarez (Consorcio POMCA 2015), mean of the four '
+               'hydrographic units containing the Moniquira parcels (24010213/230/231/215) '
+               '= 1860 mm/yr, range 1827.6-1896.2; monthly shape climate-data.org 1991-2021 '
+               'rescaled to that total. T: 3-source reconciliation at 1700 m (climate-data.org '
+               '18.2 / NASA POWER lapse-adj 18.7 / IDEAM-anchored lapse 19.6) -> 18.8',
+        'reliability': 'med'},
 }
 VEREDA_ELEV = {'gachantiva': 2450, 'santa_sofia': 2387, 'sutamarchan': 2000,
                'tena': 1384, 'san_antonio_del_tequendama': 1540, 'la_mesa': 1200}
@@ -49,6 +77,7 @@ PROJECTIONS = {
 # --- Seismic (NSR-10) ---
 AA_AV = {
     'tunja':          {'Aa': 0.20, 'Av': 0.20, 'zona': 'INTERMEDIA', 'status': 'verified (Tabla A.2.3-2)'},
+    'moniquira':      {'Aa': None, 'Av': None, 'zona': 'INTERMEDIA', 'status': 'zone per municipal PDM 2020-2023 ("zona de sismicidad media"); Aa/Av UNVERIFIED (Apendice A-4)'},
     'el_colegio':     {'Aa': None, 'Av': None, 'zona': 'INTERMEDIA', 'status': 'zone confirmed; Aa/Av UNVERIFIED (Apendice A-4), expect 0.15-0.20'},
     'villa_de_leyva': {'Aa': None, 'Av': None, 'zona': 'INTERMEDIA', 'status': 'zone confirmed; Aa/Av UNVERIFIED (Apendice A-4), expect 0.15-0.20'},
 }
@@ -63,7 +92,12 @@ FAULTS_NAMED = {
 GEM_FAULTS_URL = 'https://raw.githubusercontent.com/GEMScienceTools/gem-global-active-faults/master/geojson/gem_active_faults_harmonized.geojson'
 MPIO_GEOJSON_URL = 'https://raw.githubusercontent.com/santiblanko/colombia.geojson/master/mpio.json'
 # DANE municipal codes for our study/candidate municipalities
+# NOTE 2026-08-08: santa_sofia was '15690' (= SANTA MARIA, 280.9 km2, Boyaca's Llanos flank) and
+# sutamarchan was '15762' (= SORA, 30.4 km2). Both were pulling the wrong polygon into the map.
+# Corrected against the source mpio.json: Santa Sofia = 15696 (74.6 km2), Sutamarchan = 15776
+# (105.6 km2). Moniquira = 15469 (212.8 km2) added.
 DANE = {'el_colegio': '25245', 'villa_de_leyva': '15407', 'tunja': '15001',
-        'arcabuco': '15051', 'santa_sofia': '15690', 'gachantiva': '15293',
-        'sachica': '15638', 'sutamarchan': '15762', 'tena': '25797',
-        'la_mesa': '25386', 'san_antonio_del_tequendama': '25645'}
+        'arcabuco': '15051', 'santa_sofia': '15696', 'gachantiva': '15293',
+        'sachica': '15638', 'sutamarchan': '15776', 'tena': '25797',
+        'la_mesa': '25386', 'san_antonio_del_tequendama': '25645',
+        'moniquira': '15469'}

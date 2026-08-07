@@ -1,0 +1,5 @@
+track,scope,cells,area_km2,elev_p50,slope_mean,slope_p50,pct_buildable,pct_marginal,pct_steep
+Arcabuco / Gachantivá (cool highland),whole AOI,322140,289.9,2668,17.7,14.3,51.9,20.6,27.4
+Arcabuco / Gachantivá (cool highland),parcel band 2000-2750 m,194491,175.0,2527,13.2,10.5,68.1,19.4,12.5
+Moniquirá (warm flank),whole AOI,389748,350.8,1903,12.1,10.3,75.4,18.0,6.6
+Moniquirá (warm flank),parcel band 1500-2000 m,246421,221.8,1793,11.5,10.2,77.6,17.6,4.8

@@ -17,7 +17,7 @@ CRITERIA = [
  ("development","Development trajectory",6),
  ("legal","Legal / tenure feasibility",5),
 ]
-UNITS = ["Ricaurte wet NE flank","El Colegio / Mesitas","Tunja","Villa de Leyva (town belt)"]
+UNITS = ["Ricaurte wet NE flank","Moniquirá warm flank","El Colegio / Mesitas","Tunja","Villa de Leyva (town belt)"]
 
 # scores[unit] = {crit: (score, rationale)}
 S = {
@@ -29,9 +29,21 @@ S = {
  "resources":(78,"Good soils, abundant water, forest; decent solar; productive agro land."),
  "security":(80,"Ricaurte province: decade-low Boyacá homicides, no armed groups; rural setting avoids the tourist-town property crime of Villa de Leyva town."),
  "economy":(86,"Cheapest buildable rural land in the study (≈4,000-18,000 COP/m²); low cost of living; low tourism premium."),
- "services":(55,"Nivel I clinics local; Tunja Nivel III ~40-60 min; El Dorado ~3 h; no airport (Paipa ~1 h, intermittent). Thinner everyday services."),
+ "services":(60,"Nivel I clinics local; REVISED 2026-08-08: the nearest Nivel II is Moniquirá (~20 km from Arcabuco, ~14 km from Gachantivá), not Tunja — closer than the original read. Tunja Nivel III ~26 km/40-60 min; El Dorado ~3 h; no airport."),
  "development":(72,"Paved Villa de Leyva–Arcabuco (2025) + Occidente road package improve access; rising rural energy/connectivity."),
  "legal":(68,"No heritage overlay; water concession more feasible (surplus). Must verify UAF/baldío and that the parcel is outside SFF Iguaque buffer / rondas hídricas."),
+},
+"Moniquirá warm flank": {
+ "climate":(80,"~18.8-19 °C at ~1,700 m — warm-temperate, no cold season, the 'warm' option the group asked about. But humid (RH 78-88%) and cloudier than Villa de Leyva's dry 17-18 °C, so it feels muggier; +1.6/2.4 °C by 2050/2085 takes it toward ~21 °C, still comfortable."),
+ "water":(74,"Computed AI 1.31 (humid): 0 deficit months and ~439 mm surplus in a NORMAL year — rain (1,860 mm) is essentially the same as Arcabuco's. The catch is drought: 4.8 °C warmer ⇒ PET 1,421 vs 1,233 mm, so an El Niño year goes to 10 deficit months / 305 mm vs Arcabuco's 3 / 137. Rural supply is also not potable as delivered — the Papayal vereda aqueduct is IRCA 'Riesgo Alto' with no treatment or disinfection (Moniquirá PDM)."),
+ "seismic":(70,"NSR-10 intermediate ('zona de sismicidad media', municipal PDM); ~45 km to the nearest catalogued active fault (Alto del Trigo) — nearer than Arcabuco's ~64 km but still a comfortable distance. Exact Aa/Av UNVERIFIED (NSR-10 Apéndice A-4)."),
+ "landslide":(62,"Gentler ground than the highland (POMCA mean slope 17.4-23.7% in the units around the town vs 29.0% for Arcabuco's Río Pómeca) — but a wider hazard set: POMCA puts high WILDFIRE hazard around almost the whole cabecera, and the PDM lists Río Moniquirá flooding (meanders + occupied riverbed, 2011 events), avenidas torrenciales and mass movement. Only ~40% of municipal roads are rated optimal; 268 km of tertiary rural road."),
+ "resources":(82,"The most productive land of the Boyacá options: warm fertile soils (guava/bocadillo, panela, coffee), abundant normal-year water, good solar, and genuinely gentle terrain."),
+ "security":(77,"Same low-crime province and decade-low Boyacá homicides; Moniquirá is the Ricaurte provincial capital (~21,850 people). NOT independently verified at municipal level in this pass — it is a larger through-town on the Santander corridor than the highland veredas."),
+ "economy":(87,"Cheapest genuinely buildable land found anywhere in the study — G/Papayal ≈4,300 COP/m² for 9.11 ha, H ≈9,000 for 8 ha — against ≈110,000 in Villa de Leyva town. Low cost of living."),
+ "services":(70,"The standout: Hospital Regional de Moniquirá E.S.E. in town with Nivel I *and II* and 118 habilitated services, plus 4 private IPS, labs and rehab, and a documented push into higher-complexity surgery. Best in-town health of any option except Tunja. Offset: farthest from Bogotá/El Dorado (~3.5 h) and no airport."),
+ "development":(70,"Ruta 62 is an INVÍAS national corridor (Tunja–Moniquirá–Santander), paved, condition 'aceptable'; the regional hospital is visibly investing. Against that: the EOT still dates from 2004 (Acuerdo 021) and tertiary-road maintenance is weak."),
+ "legal":(63,"Simpler than Arcabuco in one way — no national park, no páramo, no heritage overlay. Harder in another: Corpoboyacá's POMCA explicitly says to take care granting further water concessions on the Río Moniquirá unit (Moderado IUA, the basin's highest use-conflict), and 13 municipal forest reserves plus the Serranía El Peligro edge sit inside the municipality. UAF 9.38 ha, so the same one-parcel-in-an-SAS structure applies. EOT 2004 is dated."),
 },
 "El Colegio / Mesitas": {
  "climate":(80,"Warm ~23 °C templado (mean, not the 25-28 °C the brief implied); pleasant year-round; warms toward mid-20s — still comfortable, not oppressive."),

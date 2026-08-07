@@ -4,31 +4,34 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-echo "==> 1/9 water balance (Thornthwaite + Hargreaves, El Nino stress test)"
+echo "==> 1/10 water balance (Thornthwaite + Hargreaves, El Nino stress test)"
 python3 code/water_balance.py
 
-echo "==> 2/9 seismic fault distances + accessibility metrics"
+echo "==> 2/10 seismic fault distances + accessibility metrics"
 python3 code/geo_metrics.py
 
-echo "==> 3/9 weighted scorecard + sensitivity"
+echo "==> 3/10 DEM slope / buildability (Copernicus GLO-30)"
+python3 code/slope_analysis.py
+
+echo "==> 4/10 weighted scorecard + sensitivity"
 python3 code/scorecard.py
 
-echo "==> 4/9 interactive scorecard HTML"
+echo "==> 5/10 interactive scorecard HTML"
 python3 code/build_scorecard_html.py
 
-echo "==> 5/9 interactive Leaflet map"
+echo "==> 6/10 interactive Leaflet map"
 python3 code/build_map.py
 
-echo "==> 6/9 final report HTML (from docs/final_report.md)"
+echo "==> 7/10 final report HTML (from docs/final_report.md)"
 python3 code/build_report_html.py
 
-echo "==> 7/9 friend-facing overview"
+echo "==> 8/10 friend-facing overview"
 python3 code/build_overview.py
 
-echo "==> 8/9 Arcabuco property dossier"
+echo "==> 9/10 Arcabuco + Moniquirá property dossier"
 python3 code/build_dossier2.py
 
-echo "==> 9/9 assemble site bundle"
+echo "==> 10/10 assemble site bundle"
 python3 code/build_site2.py
 
 echo "==> publishing site files to repo root"

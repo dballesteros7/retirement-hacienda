@@ -26,5 +26,41 @@ To re-run: `cd /home/claude/hacienda && python3 code/water_balance.py && python3
 - **Accessibility:** El Dorado 24–36 km from Tequendama sites vs 117–141 km from Boyacá sites.
 - **Scorecard:** Ricaurte wet NE flank ranks #1 under all five weightings (74.6–77.7).
 
+---
+
+# Revision 2026-08-08 — Moniquirá added, and the sandbox limits lifted
+
+**Run date:** 2026-08-08 · **Mode:** local machine, unrestricted network — several of the blocks above no longer apply.
+
+### Why
+The property phase surfaced a warm-flank track (Moniquirá) and the group leaned toward it, but **Moniquirá was never in the analysis**: absent from `NORMALS` (no water balance), absent from `DANE` (no fault/accessibility metrics, no map polygon), absent from the scorecard. The decision was heading for the one option that had never been scored.
+
+### Newly reachable, and used
+- **ESA Copernicus GLO-30 DEM** (AWS Open Data) — the download that was blocked in July. New stage `code/slope_analysis.py` clips the two AOIs, reprojects to UTM 18N at 30 m, computes slope and classifies it against the thresholds already in `config.py`. Tile cached under `data/dem/` (gitignored, regenerable).
+- **Corpoboyacá POMCA Medio y Bajo Suárez** (Consorcio POMCA 2015) — per-subcatchment mean annual precipitation, mean slope and elevation, plus the IUA / IRH / IVH water-stress indices.
+- **Moniquirá PDM 2020-2023** — UAF, hospital level, rural water quality (IRCA), hazards, roads, veredas.
+- **NASA POWER climatology API** — used for temperature reconciliation and diurnal range only.
+- **Property portals blocked in July** (Metrocuadrado, Properati, Mercado Libre, Ciencuadras) — all reachable; a FincaRaíz sweep of Moniquirá returned 22 lotes/fincas.
+
+### Method decisions worth recording
+- **POWER was deliberately NOT used to reset the existing sites' DTR.** Its cells resolve Villa de Leyva and Sáchica to one grid box (identical values) and place El Colegio at 1,790 m against an actual ~1,100 m. Adopting its ~9 °C ranges would have flattened the semi-arid signal this model exists to preserve. Moniquirá takes DTR = 10, the project's existing humid-site convention, corroborated by POWER (9.1) and climate-data.org's own spread (~9.9).
+- **climate-data.org magnitudes were NOT used.** Calibration check against the corpus's high-reliability IDEAM normal: its Villa de Leyva page reads **1,767 mm / 13.4 °C vs IDEAM's 997 mm / 16.9 °C** — +77% wet and 3.5 °C cold, because its municipal grid point sits up on the surrounding highlands. Only its monthly *shape* was used, rescaled to official POMCA annual totals.
+- **A unit-attribution trap, documented so it is not repeated.** POMCA's subcatchment "Río Moniquirá" (24010214) reads 1,127.2 mm/yr, but has a **mean elevation of 2,560 m** and contains Río Sáchica and Río Cane as child basins — it is the whole Villa de Leyva drainage, not Moniquirá. Its water-stress flags (Moderado IUA, Bajo IRH, highest IVH, "cuidado al seguir otorgando concesiones") likewise apply to that unit, whose two worst micro-basins are named as **Río Sáchica (Muy Alto)** and **Río Cane (Alta)** — i.e. the POMCA independently corroborates *Villa de Leyva's* documented water problem. Moniquirá's own units (24010213/230/231/215) read 1,827.6–1,896.2, mean **1,860 mm/yr**.
+- **Independent cross-checks that passed.** Arcabuco's corpus value 1,826 mm vs POMCA's Río Ubazá (its drainage) 1,896 mm → agree to 4%. DEM mean slope vs POMCA's mean-slope-per-unit table: Arcabuco 17.7° vs 16.2°; Moniquirá 12.1° vs 9.9–13.3°.
+
+### Bugs found and fixed
+- `DANE['santa_sofia']` was **15690 = Santa María** (280.9 km², Boyacá's Llanos flank) instead of **15696** (74.6 km²); `DANE['sutamarchan']` was **15762 = Sora** (30.4 km²) instead of **15776** (105.6 km²). Both had been pulling the wrong polygon into the map since the first build. Verified against the source `mpio.json`.
+
+### Key computed results (new)
+- **Water:** Moniquirá AI **1.31** (humid), 0 deficit months, +439 mm surplus — but **10 deficit months under El Niño vs Arcabuco's 3**. Near-identical rainfall (1,860 vs 1,826 mm); the separation is PET (1,421 vs 1,233 mm) from being 4.8 °C warmer.
+- **Slope, in the elevation band where parcels trade:** Moniquirá 77.6% ≤15° / median 10.2° / **4.8% >25°**; Arcabuco 68.1% / 10.5° / **12.5% >25°**. Medians are effectively tied — the difference is that Arcabuco holds **2.6× more steep ground**.
+- **Services:** Moniquirá's Nivel I+II regional hospital is the nearest II+ facility for the whole flank, cutting Arcabuco 25.8→19.8 km, Gachantivá 31.9→13.6 km, Santa Sofía 33.2→18.3 km.
+- **Scorecard:** with Moniquirá added, the wet flank leads four of five weightings; **Moniquirá wins services-first** (72.9 vs 72.8) and is within 0.3 on climate-first.
+
+### Still not done
+Routing/isochrones (drive-times remain documented values + straight lines); protected-area polygons (SFF Iguaque, páramo, Serranía El Peligro, Moniquirá's 13 municipal reserves) still not overlaid; NSR-10 Aa/Av for El Colegio, Villa de Leyva and Moniquirá still unverified; slope is area-level because listings remain vereda-level.
+
+---
+
 ## Source corpus
 Full cited source lists (name + URL + access date 2026-07-19) are in: `docs/phase0_verification.md` (seismic, climate, water, landslide, services/heritage) and `docs/phase1_research_synthesis.md` (security, economy/prices, development, legal/co-ownership, climate normals, projections, seismic detail). Primary/official sources preferred: SGC, IDEAM, IGAC, MinSalud REPS, ANT, SNR, Corpoboyacá/CAR Cundinamarca, ANI/INVÍAS, DANE, Mincultura, GEM. No coordinates, prices, or hazard values were fabricated; gaps are marked "unknown / needs field or primary pull."

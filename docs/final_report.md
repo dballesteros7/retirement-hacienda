@@ -10,7 +10,7 @@
 
 ## 1. The recommendation, in one page
 
-**Base the hacienda on the wet north-east flank of the Ricaurte valley — the Arcabuco / Gachantivá / Santa Sofía sector — rather than in Villa de Leyva's town belt.** This sector wins the weighted scorecard under *every* priority weighting tested (default, climate-first, water-first, services-first, cost-first), because it resolves the single make-or-break constraint the whole brief kept circling back to — **water** — while also being the cheapest land, keeping a mild highland climate, sitting in a low-crime province, and carrying none of Villa de Leyva's heritage-construction limits. It is ~40–60 minutes from Tunja's Nivel III hospital and full city services, and ~3 hours from Bogotá / El Dorado.
+**Base the hacienda on the wet north-east flank of the Ricaurte valley — the Arcabuco / Gachantivá / Santa Sofía sector — rather than in Villa de Leyva's town belt.** This sector leads the weighted scorecard under four of the five priority weightings tested (default, climate-first, water-first, cost-first; the **Moniquirá warm flank**, added 2026-08-08, takes services-first and is a close second elsewhere), because it resolves the single make-or-break constraint the whole brief kept circling back to — **water** — while also being the cheapest land, keeping a mild highland climate, sitting in a low-crime province, and carrying none of Villa de Leyva's heritage-construction limits. It is ~40–60 minutes from Tunja's Nivel III hospital and full city services, and ~3 hours from Bogotá / El Dorado.
 
 **Keep two live alternatives, chosen by what you weight most:**
 
@@ -29,16 +29,19 @@
 
 A transparent weighted-sum scorecard over ten criteria (0–100, higher = better), with the brief's default priority weighting plus four sensitivity scenarios. Scores are analyst judgments anchored to the cited evidence and the computed water/seismic/accessibility models; **weights are adjustable in the interactive scorecard** delivered alongside this report.
 
+> **Revised 2026-08-08.** A fifth option — the **Moniquirá warm flank** — was added after the property phase surfaced it and the group leaned toward it. It had never been scored (no climate normals, so no water balance, and no scorecard row). Adding it changes the sensitivity story below: the wet flank no longer wins *every* weighting. Full workings in `docs/moniquira_deep_dive.md`.
+
 | Rank (default weights) | Option | Score | Holds #1 under… |
 |---|---|---|---|
-| **1** | **Ricaurte wet NE flank** (Arcabuco/Gachantivá/Santa Sofía) | **75.4** | default, climate, water, services, **and** cost — every scenario |
-| 2 | Tunja | 68.2 | rises toward #1 only under services-first |
-| 3 | El Colegio / Mesitas | 67.9 | rises under climate-first & services-first |
-| 4 | Villa de Leyva (town belt) | 65.5 | never leads; best on climate alone |
+| **1** | **Ricaurte wet NE flank** (Arcabuco/Gachantivá) | **75.9** | default, climate, water, cost — four of five |
+| **2** | **Moniquirá warm flank** | **74.7** | **wins services-first**; second everywhere else |
+| 3 | Tunja | 68.2 | never leads once Moniquirá is included |
+| 4 | El Colegio / Mesitas | 67.9 | rises under climate-first |
+| 5 | Villa de Leyva (town belt) | 65.5 | never leads; best on climate alone |
 
-Sensitivity (weighted totals): the wet flank scores **74.6 → 77.7** across the five weightings — always first. Villa de Leyva's town belt ranges **60.6 (cost-first) → 68.7 (climate-first)** — always last or near-last. The middle is a genuine toss-up between Tunja and Mesitas that only resolves once you decide whether **airport access** (favours Mesitas) or **everyday services + safety** (favours Tunja) matters more.
+Sensitivity (weighted totals): the wet flank scores **75.0 → 78.0** and Moniquirá **72.9 → 76.5**. The two are within **1.2 points** on default weights, within **0.3** on climate-first, and Moniquirá takes services-first outright (72.9 vs 72.8). The one axis that genuinely separates them is **water-first**, where the gap widens to 4.0. Villa de Leyva's town belt ranges **60.6 → 68.7** — always last or near-last.
 
-Read this as: the *water + cost* axis is decisive and points hard at the wet flank; the *climate + airport* axis is what keeps Mesitas in the game; Villa de Leyva town is a "heart says yes, numbers say no" option best satisfied by buying nearby.
+Read this as: the two Boyacá flanks are now a real choice rather than a foregone conclusion. Cost, climate and terrain are close to a tie; **Moniquirá wins on health services and loses on drought resilience**, and that single trade is what the group has to settle. The *climate + airport* axis is what keeps Mesitas in the game; Villa de Leyva town remains a "heart says yes, numbers say no" option best satisfied by buying nearby.
 
 ---
 
@@ -51,6 +54,7 @@ Read this as: the *water + cost* axis is decisive and points hard at the wet fla
 | Sector | Annual P (mm) | Aridity index P/PET | Class | Deficit months | Under El Niño (P×0.6) |
 |---|---|---|---|---|---|
 | **Arcabuco (wet flank)** | 1,827 | **1.48** | humid, +609 mm surplus | 1 | still only 3 deficit months |
+| **Moniquirá (warm flank)** | 1,860 | **1.31** | humid, +439 mm surplus | 0 | **10 deficit months** — same rain, 4.8 °C warmer, so PET 1,421 vs 1,233 |
 | El Colegio / Mesitas | 1,168 | 0.73 | sub-humid (high PET from warmth) | 9 | 12 months |
 | Villa de Leyva (town) | 1,006 | 0.63 | dry-subhumid | 10 | 12 months, ~990 mm deficit |
 | Tunja | 653 | 0.50 | semi-arid | 12 | 12 months |

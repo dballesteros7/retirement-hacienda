@@ -16,12 +16,16 @@ POINTS = {
     "hosp_lamesa_II":       (4.6300, -74.4640),  # ESE Pedro León Álvarez Díaz (Nivel II)
     "hosp_tunja_III":       (5.5410, -73.3560),  # Hosp. Univ. San Rafael (Nivel III)
     "hosp_villaleyva_I":    (5.6360, -73.5230),  # ESE San Francisco (Nivel I)
+    # Hospital Regional de Moniquirá ESE — Nivel I *and II*, 118 servicios habilitados
+    # (Moniquirá PDM 2020-2023). Nearest II+ facility for the whole NE flank, incl. Arcabuco.
+    "hosp_moniquira_II":    (5.8759, -73.5733),
     # Ricaurte wet NE flank & dry SW (candidate sectors)
     "arcabuco":        (5.7597, -73.4372),
     "santa_sofia":     (5.7133, -73.6019),
     "gachantiva":      (5.7558, -73.5478),
     "sachica":         (5.5847, -73.5447),
     "sutamarchan":     (5.6206, -73.6206),
+    "moniquira":       (5.8759, -73.5733),   # warm flank seat, ~1,700 m
     "iguaque_laguna":  (5.6850, -73.4560),   # páramo water source, ~3800 m
     # Tequendama candidate sectors
     "la_mesa":         (4.6320, -74.4620),
@@ -34,6 +38,9 @@ AOIS = {
     "el_colegio":     (4.48, 4.66, -74.55, -74.34),   # municipality + Tequendama corridor
     "villa_de_leyva": (5.55, 5.78, -73.63, -73.44),   # town + dry SW + wet NE Iguaque flank
     "tunja":          (5.47, 5.60, -73.43, -73.30),   # lighter comparator
+    # the two tracks now on the table, for the slope / buildability comparison
+    "arcabuco":       (5.69, 5.83, -73.53, -73.36),   # cool highland: Arcabuco + Gachantivá flank
+    "moniquira":      (5.79, 5.95, -73.66, -73.48),   # warm flank: Moniquirá + Papayal/Neval
 }
 
 # --- Copernicus GLO-30 DEM tiles (public AWS Open Data, no key) ---
@@ -42,7 +49,8 @@ DEM_TILES = {
     "N05_W074": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N05_00_W074_00_DEM/Copernicus_DSM_COG_10_N05_00_W074_00_DEM.tif",
 }
 # which tile covers each AOI
-AOI_TILE = {"el_colegio": "N04_W075", "villa_de_leyva": "N05_W074", "tunja": "N05_W074"}
+AOI_TILE = {"el_colegio": "N04_W075", "villa_de_leyva": "N05_W074", "tunja": "N05_W074",
+            "arcabuco": "N05_W074", "moniquira": "N05_W074"}
 
 WGS = "EPSG:4326"
 UTM18N = "EPSG:32618"   # local projected CRS for slope/area (m)

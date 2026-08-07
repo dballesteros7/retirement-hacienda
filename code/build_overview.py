@@ -39,7 +39,7 @@ for cls,tag,name,where,clim,price,pro,con in CARDS:
 PARCELS = [
  ("Arcabuco / Peñas Blancas","COP 400 M · 3 ha","Stream + potable tank, 1.3 km paved road. The best all-round wet-flank pick.","https://fincaraiz.com.co/finca-en-venta-en-arcabuco/193601271"),
  ("Gachantivá / La Hoya","COP 230 M · 5.5 ha","Forest + springs on the Gachantivá–Villa de Leyva road. Cheapest larger parcel.","https://fincaraiz.com.co/finca-en-venta-en-la-hoya-gachantiva/192743485"),
- ("Tena / Catalamonte (Tequendama)","COP 1,750 M · 24 ha","2 springs + 2 streams, ~25 min to the airport. If we weight airport access highest.","https://fincaraiz.com.co/finca-en-venta-en-catalamonte-tena/193286551"),
+ ("Moniquirá / Papayal","COP 390 M · 9.1 ha","The gentlest, cheapest big parcel found — and Moniquirá has the Nivel II hospital. Bring your own water treatment.","https://fincaraiz.com.co/finca-en-venta-en-papayal-moniquira/192742687"),
 ]
 parcels_html = ""
 for name,price,note,url in PARCELS:
@@ -108,7 +108,7 @@ h2{font-family:Georgia,serif;font-size:24px;margin:44px 0 6px}
 </div>
 
 <h2>Weigh in — what matters most to you?</h2>
-<p class="sec-sub">Drag the sliders or pick a lens. Watch the ranking reshuffle. (However you weight it, the wet flank stays on top — but the runners-up trade places.)</p>
+<p class="sec-sub">Drag the sliders or pick a lens. Watch the ranking reshuffle. (The wet flank leads four of the five lenses — but <b>Moniquirá takes services-first</b>, and the two are within a point on most others.)</p>
 <div id="sc">
   <div class="presets" id="presets"></div>
   <div class="sc-grid">

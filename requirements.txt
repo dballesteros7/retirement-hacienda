@@ -8,8 +8,9 @@ geopandas
 shapely
 pyproj
 folium
-# --- optional, for the "unlocked locally" work (DEM slope, routing) ---
-# rasterio
+# DEM slope / buildability (code/slope_analysis.py) — enabled 2026-08-08
+rasterio
+# --- optional, for the "unlocked locally" work (routing) ---
 # rioxarray
 # xarray
 # richdem

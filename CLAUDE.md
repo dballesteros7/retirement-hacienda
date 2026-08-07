@@ -16,14 +16,25 @@ Live alternatives: **El Colegio / Mesitas (Tequendama)** if airport access domin
 
 **Corrections to the original brief that stuck** (see `docs/phase0_verification.md`): Mesitas is a pleasant ~23 °C *templado* mean, not "warm 25–28 °C"; Villa de Leyva's water constraint is tighter than stated (~54 L/s for ~30k people + tourists); Boyacá↔Bogotá is ~3 h, not ~1.5 h; Villa de Leyva's Río Cane concession is 34 L/s (40 L/s is plant capacity).
 
-### The property-level fork (from the Arcabuco deep dive)
+### The property-level fork — measured (revised 2026-08-08)
 
-Nine real listings were photo-scrutinized in-browser. Two tracks emerged — **pick the climate first, then the parcel**:
+Nine real listings were photo-scrutinized in-browser; all re-verified 8 Aug 2026 as **live at unchanged prices**. Two tracks are on the table. **v3 rescoped the dossier to these two** and dropped F (Villa de Leyva — water-constrained side) and I (Santa Sofía — 0.72 ha, too small).
 
-- **Cool green highland (~2,100–2,700 m, ~13–16 °C)** — Arcabuco & Gachantivá. The original wet-flank thesis: lush, cool, beautiful. But **steep** — net-buildable flat area and protected-boundary proximity are the binding constraints. Top picks: **A** Peñas Blancas w/ house (COP 400 M, 2.97 ha), **C** Gachantivá/La Hoya (COP 230 M, 5.45 ha — cheapest, wettest, but how much is buildable?), **B** Peñas Blancas blank (COP 270 M).
-- **Warm Moniquirá flank (~1,700 m, ~19 °C)** — north on paved Ruta 62. The **gentlest, cheapest, most genuinely buildable land found**, with abundant water — at the cost of a warm subtropical lifestyle and ~40 min more distance. Top picks: **G** Papayal (COP 390 M, 9.11 ha, flattest land in the whole search), **H** geotech-lote (COP 720 M, 8 ha, soil+water studies already done, fenced).
+The original framing was "cool-but-steep vs warm-and-flat". With a real DEM and the Corpoboyacá POMCA, that is only half right:
 
-Full per-parcel reads: `docs/arcabuco_scrutiny.md`, `docs/arcabuco_inventory.md`, rendered in `dossier.html`.
+- **Terrain is nearly a tie.** In the elevation band where parcels actually trade, median slope is **10.2° (Moniquirá) vs 10.5° (Arcabuco)**. The difference is the tail — Arcabuco holds **2.6× more land above 25°** (12.5% vs 4.8%). So the highland isn't steep on average; it has more bad pockets, which means **parcel selection matters far more there**. The old "Arcabuco is steep" line came from the whole-area figure (27.4% >25°), which includes the Iguaque massif where nothing is sold.
+- **Water is the one real gap, and it favours Arcabuco.** Both get the same rain (1,826 vs 1,860 mm). Moniquirá is 4.8 °C warmer ⇒ PET 1,421 vs 1,233 mm ⇒ an El Niño drought takes it to **10 deficit months vs Arcabuco's 3**. In a *normal* year Moniquirá has **zero** deficit months and a 439 mm surplus — it is genuinely humid. The gap is drought resilience.
+- **Services favour Moniquirá decisively.** **Hospital Regional de Moniquirá E.S.E., Nivel I *and II*, 118 servicios habilitados** — and it is the nearest second-level care for the highland too (Arcabuco 19.8 km, Gachantivá 13.6 km, both closer than Tunja).
+- **Cost is a tie** — G/Papayal ~4,300 COP/m² and C/La Hoya ~4,200, one on each flank.
+
+**Cool highland** top picks: **A** Peñas Blancas w/ house (400 M, 2.97 ha), **C** Gachantivá/La Hoya (230 M, 5.45 ha), **B** Peñas Blancas blank (270 M).
+**Warm flank** top picks: **G** Papayal (390 M, 9.11 ha), **H** geotech-lote (720 M, 8 ha), plus two new finds — **N** (1,700 M, **40.96 ha**, same COP/m² as G and the only parcel above the UAF, so the only lawfully divisible one) and **K** (Neval y Cruces lots with **individual matrículas already issued**).
+
+Full per-parcel reads: `docs/arcabuco_scrutiny.md`, `docs/arcabuco_inventory.md`, the Moniquirá analysis in `docs/moniquira_deep_dive.md`, all rendered in `dossier.html`.
+
+### Where the scorecard lands now
+
+Adding Moniquirá as its own unit means the wet flank **no longer wins every weighting**: it leads four of five, Moniquirá takes **services-first** (72.9 vs 72.8), and climate-first is a 0.3-point dead heat. Water-first is the only clear separation (77.7 vs 73.7). **The group's lean toward Moniquirá is defensible** — the trade to settle consciously is health services now vs drought resilience over 30 years.
 
 ### Two constraints that gate every Arcabuco-area parcel
 
@@ -59,6 +70,7 @@ Full per-parcel reads: `docs/arcabuco_scrutiny.md`, `docs/arcabuco_inventory.md`
 |---|---|---|
 | `code/water_balance.py` | `code/data_inputs.py` (IDEAM normals) | `water_balance_summary.csv`, `fig_water_balance.png` |
 | `code/geo_metrics.py` | `data/seismic/gem_faults_co.geojson` | `geo_metrics.csv` (fault distances, accessibility) |
+| `code/slope_analysis.py` | Copernicus GLO-30 tile → `data/dem/` (cached, gitignored) | `slope_summary.csv`, `fig_slope.png` |
 | `code/scorecard.py` | inline scores | `scorecard_scores.csv`, `scorecard_data.json` |
 | `code/build_scorecard_html.py` | `scorecard_data.json` | `scorecard_interactive.html` |
 | `code/build_map.py` | `data/admin/*`, `data/seismic/*` | `hacienda_map.html` |
@@ -90,20 +102,23 @@ The `code/`, `data/`, `docs/`, `outputs/` folders sit in the repo but are ignore
 
 The original analysis ran in a sandbox whose network was allow-listed to PyPI + GitHub only. Several planned methods were blocked and were substituted with published data (all disclosed in `logs/methods_log.md`). **On a local machine with normal internet, these unlock — they are the highest-value next steps:**
 
-- **Download a real DEM** (Copernicus GLO-30 from AWS, or OpenTopography) for the Arcabuco AOI → compute actual **slope / aspect / buildable-land polygons**. This directly answers the single biggest open question: *how many gentle, clear hectares does each parcel really have?* Terrain is currently read visually from photos + OpenTopoMap contours.
-- **Routing** (OSRM / OpenRouteService / Valhalla) → real drive-time isochrones to El Dorado, Tunja's Nivel III hospital, Villa de Leyva. Current drive-times are documented values + straight-line distances.
-- **The blocked property portals** — Metrocuadrado, Mercado Libre, Properati, Ciencuadras — were unreachable. FincaRaíz was the only searchable source, so the ~12-listing inventory is almost certainly incomplete, especially for Chíquiza/Iguaque. A manual or scripted sweep would widen the pool.
-- **Official Colombian portals** (SGC seismic-hazard, IGAC, Corpoboyacá, IDEAM DHIME) were egress-blocked → exact NSR-10 Aa/Av for El Colegio & Villa de Leyva, precise SGC mass-movement susceptibility, and the protected-area polygons are still unverified. **Getting the Corpoboyacá / Parques Nacionales SFF Iguaque + páramo shapefiles and overlaying the candidate parcels is the highest-value legal check available computationally.**
+- ✅ **DONE 2026-08-08 — real DEM.** Copernicus GLO-30 now downloads and drives `code/slope_analysis.py` (build stage 3/10). Result above. **Caveat that remains:** listings are located at *vereda* level with no coordinates or cadastral boundaries, so slope is **area-level, not per-parcel** — it says which flank is gentler, not how many flat hectares parcel G or C has.
+- ✅ **DONE 2026-08-08 — Corpoboyacá.** The POMCA Medio y Bajo Suárez is reachable and now supplies per-subcatchment precipitation, mean slope and the IUA/IRH/IVH water indices. The Moniquirá PDM 2020-2023 supplies UAF, hospital level, IRCA water quality, hazards and roads.
+- ✅ **DONE 2026-08-08 — the blocked portals.** Metrocuadrado, Mercado Libre, Properati and Ciencuadras are all reachable. A FincaRaíz sweep of Moniquirá returned 22 lotes/fincas and five group-relevant new entries (K, L, M, N, O). **Chíquiza/Iguaque was not swept** — still open.
+- **Routing** (OSRM / OpenRouteService / Valhalla) → real drive-time isochrones to El Dorado, Tunja's Nivel III hospital, Moniquirá's Nivel II. Current drive-times are still documented values + straight-line distances. **Still open.**
+- **Protected-area polygons** (SGC, IGAC, Parques Nacionales SFF Iguaque + páramo, Moniquirá's 13 municipal reserves, Serranía El Peligro) are **still not overlaid**, and exact NSR-10 Aa/Av for El Colegio, Villa de Leyva and Moniquirá is **still unverified**. This is now the highest-value remaining computational check.
 
 ---
 
 ## 5. Open items
 
-- [ ] Overlay each shortlisted parcel on SFF Iguaque / páramo Iguaque-Merchán / Serranía El Peligro / rondas hídricas (esp. **D — Monte Suárez**).
-- [ ] Compute real slope + buildable polygons per candidate from a downloaded DEM (esp. **C — La Hoya**, whose buildable share is the open question, and **G — Papayal**, to confirm the flat impression).
-- [ ] Exact NSR-10 **Aa/Av** for El Colegio and Villa de Leyva (NSR-10 Apéndice A-4 / SGC portal).
-- [ ] Widen inventory via the blocked portals + a direct approach to the listing agencies (**ATOS Inmobiliaria** holds most Arcabuco/Moniquirá raw land; **Casa 360** has H; **Rubén Quiroga** has I).
-- [ ] Decide the climate fork (cool highland vs warm Moniquirá) with the group — the scorecard at `scorecard.html` is the tool for that conversation.
+- [ ] Overlay each shortlisted parcel on SFF Iguaque / páramo Iguaque-Merchán / Serranía El Peligro / rondas hídricas (esp. **D — Monte Suárez**) **and** Moniquirá's 13 municipal *Conservación Hídrica* reserves. Still the highest-value legal check.
+- [x] ~~Compute real slope from a DEM~~ — done at **area level** (stage 3/10). **Still open per-parcel:** needs coordinates from the agencies, then a clip per boundary. C (La Hoya) and G (Papayal) remain the two that matter.
+- [ ] Exact NSR-10 **Aa/Av** for El Colegio, Villa de Leyva **and Moniquirá** (Apéndice A-4 / SGC portal).
+- [x] ~~Widen inventory via the blocked portals~~ — done for Moniquirá (22 listings, 5 new group-relevant). **Still open:** Chíquiza/Iguaque, and a direct approach to the agencies (**ATOS Inmobiliaria** holds most Arcabuco/Moniquirá raw land; **Casa 360** has H; **Rubén Quiroga** has I).
+- [ ] **Chase the two new Moniquirá finds before committing to G:** **N** (40.96 ha at G's price/m², the only parcel above the 9.38 ha UAF → the only lawfully divisible one) and **K** (Neval y Cruces lots with individual matrículas already issued — verify the subdivision is lawful).
+- [ ] **Decide the climate fork with the group.** Both flanks are now scored: the wet flank leads four of five weightings, Moniquirá wins services-first, climate-first is a 0.3-point tie. The real trade is **Moniquirá's Nivel II hospital now vs Arcabuco's drought resilience over 30 years**. `scorecard.html` is the tool for that conversation — and it finally contains both sides of the fork.
+- [ ] **If Moniquirá:** price a potable-water treatment system into the build budget. Rural supply there is abundant but **not potable** — all four monitored aqueducts are IRCA "Riesgo Alto" with no treatment, including the Papayal one behind G's water claim.
 - [ ] Draft outreach to the agencies for exact coordinates, Certificado de Tradición y Libertad, and water-concession papers on the top parcels.
 - [ ] Optional: replace the dossier's embedded FincaRaíz listing photos with links, if rehosting third-party listing images on a public site is a concern.
 

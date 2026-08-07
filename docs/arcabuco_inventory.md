@@ -1,4 +1,19 @@
-# Arcabuco wet-flank — finca inventory & constraints (2026-07-19)
+# Arcabuco + Moniquirá — finca inventory & constraints (2026-07-19, refreshed 2026-08-08)
+
+> **Refresh 2026-08-08.** All nine parcels below re-checked: **live, prices unchanged** (A 400M · B 270M · C 230M · D 1,600M · E 750M · G 390M · H 720M). The portals blocked in July — Metrocuadrado, Properati, Mercado Libre, Ciencuadras — are **all reachable now**; a FincaRaíz sweep of Moniquirá returns **22 lotes/fincas**. New entries relevant to a group hacienda, none yet photo-scrutinised:
+>
+> | # | Vereda / note | Price | Area | COP/m² | Why it matters |
+> |---|---|---|---|---|---|
+> | K | Neval y Cruces — **individually titled lots** | 170 M (5,000 m²) | 5,000 / 5,357 / 6,000 / 7,400 / 8,821 m² | ~34,000 | Each carries its **own matrícula inmobiliaria**; power, acueducto, gas, quebrada; 4 km from town (2.8 paved); the 8,821 m² has its own nacedero. A different answer to UAF — if the subdivision is lawful. `193893121` |
+> | N | (unnamed) | 1,700 M | **40.96 ha** | **4,150** | Same COP/m² as G at 4.5× the size, and the only parcel found **above the 9.38 ha UAF** — so the only one lawfully divisible. `192463144` |
+> | L | Alto Cantando | 1,070 M | 7.76 ha | 13,798 | 2,500 guava trees, 3BR house, and an **existing concesión de agua** on the quebrada — the hardest permission, already granted. `193445858` |
+> | M | near vía Togüi | 1,860 M | 18 ha | 10,333 | 350 m² cabaña, 3 nacimientos, 2 acueducto points, own transformer, 15 min to Barbosa. `193434440` |
+> | O | Colorado | 320 M | 1.63 ha | 19,671 | Small — and Colorado is a **wildfire-recurrent vereda** per the PDM. `192743320` |
+>
+> Also seen: 69 ha at 3,600 M (5,217/m²), a luxury turnkey at La Laja (2,600 M), and gated-lot projects at San Cristóbal / Condominio Venecia (~160,000/m²) — wrong product for this group.
+>
+> **Moniquirá-specific constraints** (see `docs/moniquira_deep_dive.md`): **UAF 9.38 ha**; no park/páramo/heritage overlay, but 13 municipal *Conservación Hídrica* reserves (veredas González, Monjas, Pila Grande, San Vicente, Tierra de González) and the Serranía El Peligro edge; **EOT Acuerdo 021 of 2004** (dated); rural water abundant but **not potable** — all four monitored aqueducts IRCA "Riesgo Alto" with no treatment, including the one serving **Papayal** (parcel G's vereda); high **wildfire** hazard ringing the cabecera; Río Moniquirá flood + avenidas torrenciales; NSR-10 **INTERMEDIA**, Aa/Av unverified. **Vereda-name collision warning:** Moniquirá has its own "La Hoya" and "La Capilla" — verify the municipality on the matrícula, not the slug.
+
 
 Buildable fincas ~1–10 ha, wet NE flank (Arcabuco · Gachantivá · Santa Sofía · Moniquirá · Chíquiza). Source: FincaRaíz (only reliably fetchable portal; Properati/MercadoLibre/Metrocuadrado JS-/robots-blocked → browser pass needed). Prices COP; 1 ha=10,000 m²; 1 fan≈6,400 m².
 
