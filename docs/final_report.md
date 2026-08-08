@@ -2,7 +2,9 @@
 
 ### Colombian Central Highlands (Cundiboyacense) · 30-year horizon · Final report
 
-**Date:** 19 July 2026 · **Prepared for:** Diego · **Scope:** El Colegio / Mesitas del Colegio (Cundinamarca) · Villa de Leyva (Boyacá) · Tunja (Boyacá), with candidate sectors surfaced within each.
+**Date:** 19 July 2026 · **revised 8 August 2026** · **Prepared for:** Diego · **Scope:** El Colegio / Mesitas del Colegio (Cundinamarca) · Villa de Leyva (Boyacá) · Tunja (Boyacá) · the Ricaurte wet NE flank · **and the Moniquirá warm flank**, added in the August revision.
+
+> **How this site fits together.** The **[overview](index.html)** is the short version — the decision, the shortlist and what it would cost to build. **This report** is the *where*: the regional evidence and how the five options rank. The **[dossier](dossier.html)** is the *which*: twelve real parcels, every photograph reviewed. The **[scorecard](scorecard.html)** lets you re-weight the criteria yourself, and the **[map](map.html)** shows the geography.
 
 > This is decision-support, not legal, engineering, or financial advice. Title work needs a Colombian abogado/notario; any parcel needs on-site geotechnical, hydrogeological and structural surveys before purchase or construction. Every quantitative claim traces to a cited source (Phase 0/1 reports + methods log); values that could not be reached from primary sources in this environment are flagged "needs field/primary pull," not invented.
 
@@ -19,7 +21,7 @@
 
 **Tunja is the services/hospital anchor, not the residence:** safest of the three, best everyday services, strongest road pipeline, but cold (~13 °C) and ~2.5–3 h from an international airport.
 
-**Top parcels to pursue** (real current listings, all water/access claims still to be field-verified): Arcabuco / Peñas Blancas (COP 400 M, 3 ha, quebrada + potable tank, 1.3 km paved) as the best all-round wet-flank pick; Gachantivá / La Hoya (COP 230 M, 5.5 ha, forest + springs) as the cheapest larger parcel; and, if you prioritise airport access instead, Tena / Catalamonte (COP 1,750 M, 24 ha, two springs + two streams, ~25 min from El Dorado) — subject to a slope survey.
+**Top parcels to pursue** — the shortlist now lives in the **[dossier](dossier.html)**, where all twelve candidates are set out with their photo galleries reviewed. In brief: **H / Moniquirá geotech lote** (COP 720 M, 8 ha) is the best building land found and arrives with soil and water studies already done; **G / Papayal** (COP 390 M, 9.1 ha) is the cheapest usable land but sits on limestone karst; **N / finca panelera** (COP 1,700 M, 41 ha) is the only candidate above the UAF and so the only one lawfully divisible; and **A / Peñas Blancas** (COP 400 M, 3 ha) is the only one with a habitable house, on the more drought-resilient flank.
 
 **Hold the group's land in a Colombian SAS** (not direct copropiedad): a partner exits by transferring *shares*, not by re-notarising the land, there's no partition-forced-sale risk, and shares sit outside the non-resident wealth-tax base. At the parcel sizes here (all < COP 2 bn) wealth-tax exposure is effectively nil.
 
@@ -29,7 +31,7 @@
 
 A transparent weighted-sum scorecard over ten criteria (0–100, higher = better), with the brief's default priority weighting plus four sensitivity scenarios. Scores are analyst judgments anchored to the cited evidence and the computed water/seismic/accessibility models; **weights are adjustable in the interactive scorecard** delivered alongside this report.
 
-> **Revised 2026-08-08.** A fifth option — the **Moniquirá warm flank** — was added after the property phase surfaced it and the group leaned toward it. It had never been scored (no climate normals, so no water balance, and no scorecard row). Adding it changes the sensitivity story below: the wet flank no longer wins *every* weighting. Full workings in `docs/moniquira_deep_dive.md`.
+> **Revised 2026-08-08.** A fifth option — the **Moniquirá warm flank** — was added after the property phase surfaced it and the group leaned toward it. It had never been scored (no climate normals, so no water balance, and no scorecard row). Adding it changes the sensitivity story below: the wet flank no longer wins *every* weighting. **Full workings in §5.**
 
 | Rank (default weights) | Option | Score | Holds #1 under… |
 |---|---|---|---|
@@ -90,6 +92,12 @@ The wet flank has a genuine surplus and barely flinches under drought; every val
 - **Trade-offs:** cooler and cloudier than the valley floor; thinner local services; ~3 h to El Dorado; hillier terrain (verify parcel slope); confirm UAF/baldío status and Iguaque-buffer/ronda-hídrica clearance.
 - **Verdict:** the best balance of the ten criteria for a 30-year, water-secure, affordable hacienda with a mild climate.
 
+### ★ Moniquirá warm flank (ADDED 2026-08-08 — THE CLOSE SECOND, AND THE GROUP'S LEAN)
+*Elevation ~1,700 m · ~18.8 °C · Boyacá, Ricaurte province · full workings in §5*
+- **Why it's here:** same rainfall as Arcabuco (1,860 vs 1,826 mm) and humid in a normal year (AI 1.31, zero deficit months, +439 mm surplus); a **Nivel I+II regional hospital in town** with 118 servicios habilitados — the nearest second-level care for the whole flank, Arcabuco included; the cheapest genuinely buildable land found (~4,150–9,000 COP/m²); gentler terrain, with 2.6× less steep ground than the highland; no park, no páramo, no heritage overlay.
+- **Trade-offs:** 4.8 °C warmer means PET 1,421 vs 1,233 mm, so an El Niño drought takes it to **10 deficit months against Arcabuco's 3** — drought resilience is its one measured weakness. Rural water is abundant but **not potable as delivered**. Wildfire hazard rings the cabecera, the Río Moniquirá floods in the urban sector, and it is the farthest option from Bogotá/El Dorado (~3.5 h).
+- **Verdict:** a defensible choice, and the scorecard makes it second by ~1 point on most weightings and **first on services**. The trade to settle consciously is better health care now against better water in the bad years.
+
 ### El Colegio / Mesitas del Colegio — Tequendama (BEST FOR AIRPORT ACCESS)
 *Elevation ~990–1,300 m · ~23 °C templado · Cundinamarca*
 - **Strengths:** decisively closest to El Dorado (~1 h 47) and Bogotá services (~1.5 h to Nivel III/IV); pleasant warm climate; deep, liquid land market with condominio-friendly zoning; mid prices (Tena/San Antonio cheaper).
@@ -110,31 +118,80 @@ The wet flank has a genuine surplus and barely flinches under drought; every val
 
 ---
 
-## 5. Grounded parcels — real listings, cross-checked
+## 5. The Moniquirá flank, in detail
 
-Seven real current listings, mapped and cross-checked against the computed layers (see the interactive map). **Every water/access claim below is the seller's and must be field- and GIS-verified in due diligence** — in these markets "own water" and "paved access" are frequently optimistic, and several portal listings were mis-tagged to the wrong municipality.
+Moniquirá entered the analysis late — it surfaced during the property phase, the group leaned toward it, and it had **never been scored**: no climate normals, so no water balance; no municipal code, so no fault, accessibility or map data; and no scorecard row. This section is its first full treatment. It is the regional evidence; for *which parcel*, see the dossier.
 
-| # | Sector / vereda | Price · area · COP/m² | Seller's claim | Cross-check note |
-|---|---|---|---|---|
-| 1 | **Arcabuco / Peñas Blancas** | 400 M · 3.0 ha · 13,472 | quebrada + potable tank; 1.3 km paved | On the surplus-water flank (AI ~1.48); paved link completed 2025. **Best all-round pick.** |
-| 2 | **Gachantivá / La Hoya** | 230 M · 5.5 ha · 4,217 | forest + water sources; Gachantivá–VdL road | Cheapest larger parcel; wet flank. Verify road grade + exact water. |
-| 3 | Santa Sofía / Salitrillo | 1,400 M · 12 ha · 11,667 | nacimiento de agua | Large acreage, wet flank; confirm the spring is on-title and concessionable. |
-| 4 | Villa de Leyva / Capilla | 800 M · 6,511 m² · 122,869 | building licence valid; stream adjoins | Town-belt price premium; stream = ronda-hídrica setback to check; heritage rules may apply. |
-| 5 | **Tena / Catalamonte** | 1,750 M · 24 ha · 7,292 | 2 springs + 2 streams; 3 houses | Standout acreage value, ~25 min to El Dorado — the airport-first pick; **verify slope/landslide.** |
-| 6 | San Antonio Teq. / Vancouver | 1,200 M · ~6 ha · 20,161 | paved road; small lake | Closest to airport; steep landslide-prone descent — geotech essential. |
-| 7 | El Colegio / Vía La María | 329 M · 5,000 m² · 65,800 | natural water + aqueduct; 10 min main road | Affordable warm-climate entry near airport; confirm access-corridor exposure. |
+### 5.1 Water — same rain, more thirst
+
+| | rain | PET | aridity index | normal year | **El Niño (P×0.60)** |
+|---|---|---|---|---|---|
+| **Arcabuco** · 2,600 m · 14.0 °C | 1,826 mm | 1,233 mm | **1.48** humid | 1 deficit month · +609 mm | **137 mm · 3 months** |
+| **Moniquirá** · 1,700 m · 18.8 °C | 1,860 mm | 1,421 mm | **1.31** humid | **0 deficit months** · +439 mm | **305 mm · 10 months** |
+
+They receive **the same rain**. What separates them is heat: 4.8 °C warmer means 15% more evaporative demand, so the soil store empties far faster once rain fails. In a normal year Moniquirá needs no defending. In a drought year it degrades roughly three times worse — and the drought year is the one a 30-year horizon has to survive. It is the same mechanism that produced Villa de Leyva's 2016 rationing.
+
+**A unit-attribution trap, documented so nobody repeats it.** Corpoboyacá's POMCA lists a subcatchment called *"Río Moniquirá" (24010214) at 1,127 mm/yr*, and flags it for the basin's highest water-use conflict (Moderado IUA), lowest flow regulation (Bajo IRH) and greatest shortage vulnerability (IVH), with an explicit instruction to take care granting further concessions. **None of that is about Moniquirá.** That unit has a mean elevation of 2,560 m and its child micro-basins include **Río Sáchica** and **Río Cane** — it is the whole Villa de Leyva drainage, whose semi-arid highlands (VdL 997 mm, Sáchica 726 mm) pull the area-average down. Its two worst-rated micro-basins are named as Río Sáchica (Muy Alto) and Río Cane (Alta), so the POMCA is independently confirming *Villa de Leyva's* documented water problem. The units that actually contain the Moniquirá parcels read **1,827.6–1,896.2 mm, mean 1,860**.
+
+*Cross-check:* Arcabuco drains via Río Pómeca, a child of Río Ubazá, whose POMCA value of 1,896.2 mm agrees with this study's independently-sourced 1,826 mm to **4%**.
+
+**The real Moniquirá water problem is potability, not quantity.** Of 23 rural supplies in the municipality, **only three have a working treatment plant**. All four that the Secretaría de Salud monitors are **IRCA "Riesgo Alto" with no potabilisation and no disinfection** — including the one serving **Papayal**, the vereda behind parcel G's "punto de agua veredal" claim. The urban plant, by contrast, runs IRCA 0.29% at 70% coverage. Water here is abundant, not drinkable: a plant sized for a small complex costs **COP 11–15.5 M** plus ~600 k/yr, and belongs in any build budget.
+
+### 5.2 Terrain — the "flattest land" claim, measured
+
+| in the parcel elevation band | ≤15° buildable | median slope | **>25° steep** |
+|---|---|---|---|
+| Arcabuco / Gachantivá · 2,000–2,750 m | 68.1% | 10.5° | **12.5%** |
+| Moniquirá · 1,500–2,000 m | 77.6% | 10.2° | **4.8%** |
+
+Copernicus GLO-30 at 30 m, restricted to the band where parcels actually trade so neither flank is scored against its own páramo tops or river gorges. **Median slopes are effectively tied.** The difference is the tail: Arcabuco holds **2.6× more genuinely steep land**. So the old "cool-but-steep vs warm-and-flat" framing is only half right — the highland is not steep on average, it simply has more bad pockets, which means **parcel selection matters far more there**. The 27.4%-above-25° figure that created the "steep" impression is a whole-area number including the Iguaque massif, where nothing is for sale.
+
+*Cross-check:* POMCA's own mean-slope-per-unit table gives Arcabuco's Río Pómeca 29.0% (16.2°) against this DEM's 17.7°, and the Moniquirá units 17.4–23.7% (9.9–13.3°) against 12.1°. Two unrelated methods agree.
+
+**Limit:** listings are located at *vereda* level with no coordinates or cadastral boundaries, so this characterises the two flanks, not individual parcels.
+
+### 5.3 Services — the strongest card
+
+**Hospital Regional de Moniquirá E.S.E.** runs **Nivel I *and* II with 118 servicios habilitados**, plus four private IPS, clinical labs and rehabilitation, and departmental reporting through 2025–26 describes it consolidating as the referral centre for Ricaurte, Boyacá and southern Santander. This corrects this report's earlier framing of Tunja as the sole hospital anchor — and it improves the *highland* option too:
+
+| straight-line to nearest Nivel II+ | was (Tunja III) | now (Moniquirá II) |
+|---|---|---|
+| Arcabuco | 25.8 km | **19.8 km** |
+| Gachantivá | 31.9 km | **13.6 km** |
+| Santa Sofía | 33.2 km | **18.3 km** |
+| Moniquirá | 44.2 km | **0 km** |
+
+Tunja remains Boyacá's only **Nivel III**, so it stays the anchor for genuinely complex care. Access is by **Ruta 62**, an INVÍAS national corridor, paved, condition "aceptable" — but the municipality rates only ~40% of its own roads as optimal across 268 km of tertiary rural road, so the last mile is what to check.
+
+### 5.4 Hazards — a wider set than the highland's
+
+- **Wildfire.** POMCA puts large areas of **high wildfire hazard** around Moniquirá, and those zones *"rodean casi en su totalidad los cascos urbanos"*. Recurrent in veredas Colorado Alto, Colorado Medio, Monjas Alto, Tierra de González, La Capilla and Coralina — and there is a live listing in Colorado.
+- **Flood and avenidas torrenciales.** The Río Moniquirá overtops in the urban sector (meanders plus an occupied riverbed), critical in La Niña years, 2011 events cited.
+- **Seismic.** NSR-10 **INTERMEDIA**; ~45 km to the nearest catalogued active fault against Arcabuco's ~64 km — nearer but both comfortable. **Exact Aa/Av still unverified.** The municipal plan itself flags widespread NSR-10 non-compliance in existing local construction, which matters if you buy a built house rather than build one.
+
+### 5.5 Legal — simpler in one way, harder in another
+
+**Simpler:** no national park, no delimited páramo, no heritage overlay — none of what gates every Arcabuco parcel. **Harder:** 13 municipal forest reserves, every one designated *Conservación Hídrica*, plus the Serranía El Peligro edge. **UAF is 9.38 ha**, so the same conclusion holds as in Arcabuco: buy one titled parcel, held in a shared SAS. (95% of Moniquirá's rural predios are already under 10 ha — the UAF blocks new subdivision, not purchase.) The **EOT dates from 2004**, as dated as Arcabuco's.
+
+⚠ **Vereda-name collisions are a live trap.** Moniquirá's own vereda list contains **"La Hoya"** and **"La Capilla"** — the names under which parcels in Gachantivá and Villa de Leyva were filed. Portal mis-tagging has already been caught repeatedly here, including one shortlisted parcel whose URL and description disagree. Verify the municipality on the matrícula, never the listing slug.
 
 ---
 
-## 6. Next steps (before any offer)
+## 6. Which parcel? — see the dossier
 
-1. **Shortlist 2–3 parcels** on the wet flank (start with Arcabuco/Peñas Blancas and Gachantivá/La Hoya) and, if airport access is weighted heavily, one Tequendama option (Tena/Catalamonte).
+Parcel-level work lives in the **[property dossier](dossier.html)**: twelve real listings across both flanks, every photo gallery reviewed (207 images), with per-parcel terrain, water, access and diligence notes, plus agency and time-on-market for each. The **[overview](index.html)** carries the four-parcel shortlist and what it would cost to build on them.
+
+This report deliberately no longer duplicates that table — it was drifting out of date against the dossier.
+
+## 7. Next steps (before any offer)
+
+1. **Settle the flank first, then shortlist 2–3 parcels.** The scorecard puts the two Boyacá flanks within ~1 point, so this is a group decision, not an analytical one: Moniquirá's Nivel II hospital now, or Arcabuco's drought resilience over thirty years. Once settled, the current shortlist is **H** (best building land, studies already done), **G** (cheapest, but karst), **N** (only parcel above the UAF, so the only divisible one) and **A** (the only one with a habitable house). See the [dossier](dossier.html).
 2. **Commission local field checks:** a topographic + geotechnical survey (slope/stability), a hydrogeological assessment of the claimed water source, and confirmation the parcel sits outside protected buffers.
 3. **Legal due diligence** via a Colombian abogado/notario: Certificado de Tradición y Libertad, ANT baldío/UAF check, POT land-use certificate, water-concession feasibility with Corpoboyacá/CAR, and (for Villa de Leyva parcels) heritage reach.
 4. **Stand up the SAS + shareholders' agreement** with a tributarista before signing; register the foreign investment with Banco de la República to protect repatriation.
 5. **Close the open data items** the sandbox couldn't reach: exact NSR-10 Aa/Av (Apéndice A-4) and precise SGC fault/susceptibility geometry for the chosen parcel.
 
-## 7. Caveats, open items & reproducibility
+## 8. Caveats, open items & reproducibility
 
 Confidence is highest on the *relative ranking* (robust across weightings and to water-model choice) and on the qualitative findings (all cited). It is lower on absolute figures where the environment blocked primary portals: exact Aa/Av for El Colegio & Villa de Leyva, precise fault vertices, decision-grade precipitation totals for El Colegio/Tunja, and parcel-level slope (no DEM was downloadable in this sandbox — terrain/landslide is scored from published SGC/EOT hazard data and flagged for a field/GIS survey, as the brief anticipated). Climate projections are presented as ranges. Land prices are from FincaRaíz (the only fetchable portal); other portals were JS-blocked.
 

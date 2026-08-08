@@ -1,10 +1,10 @@
 """Arcabuco + Moniquira property dossier v3 (2026-08-08).
 
-v3 rescopes to the two tracks still on the table and adds the Moniquira deep dive the group
-asked for. Moniquira had never been in the analysis at all - no climate normals, no water
-balance, no scorecard row - so v3 carries its first computed numbers: water balance, DEM slope,
-services, hazards and legal, all from primary sources. Prose source: docs/moniquira_deep_dive.md.
-Villa de Leyva (F) and Santa Sofia (I) are dropped from the tracks; see the note in the header.
+This page answers ONE question: which parcel. The regional argument - which flank, and why - lives
+in the report (docs/final_report.md, section 5); the build costs and community layout live on the
+overview (code/masterplan.py + build_overview.py). Keeping those separate is deliberate: the three
+pages had drifted into re-arguing each other. Prose sources: docs/candidate_scrutiny.md and
+docs/arcabuco_scrutiny.md. Villa de Leyva (F) and Santa Sofia (I) are dropped from the tracks.
 """
 import base64
 S = "outputs/shots"
@@ -14,10 +14,6 @@ def img(fn):
     return "data:image/jpeg;base64," + base64.b64encode(open(f"{S}/{fn}", "rb").read()).decode()
 
 
-def png(path):
-    return "data:image/png;base64," + base64.b64encode(open(path, "rb").read()).decode()
-
-
 I = {
  "A": img("screenshot-1784473887655-0.jpg"), "Clead": img("screenshot-1784473887656-1.jpg"),
  "Cspring": img("screenshot-1784473958903-2.jpg"), "B": img("screenshot-1784474148823-6.jpg"),
@@ -25,8 +21,6 @@ I = {
  "D": img("screenshot-1784475339222-0.jpg"), "E": img("screenshot-1784475378771-3.jpg"),
  "G": img("screenshot-1784475444227-5.jpg"), "H": img("screenshot-1784475471382-6.jpg"),
  "topo_moni": img("screenshot-1784475532278-8.jpg"),
- "fig_water": png("outputs/fig_water_balance.png"),
- "fig_slope": png("outputs/fig_slope.png"),
 }
 
 
@@ -170,63 +164,27 @@ HTML = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name
 <br>• <b>Water — the real difference, and it favours Arcabuco.</b> They get <i>the same rain</i> (1,860 vs 1,826 mm). But Moniquirá is 4.8 °C warmer, so its evaporative demand is 15% higher, and in an El Niño drought it goes to <b>10 deficit months against Arcabuco's 3</b>.
 <br>• <b>Services — the real difference, and it favours Moniquirá.</b> A <b>Nivel I+II regional hospital in town</b>, which also happens to be the nearest second-level care for the highland veredas.</div>
 
-<h2>The Moniquirá deep dive</h2>
-
-<h4>1 · Water: same rain, more thirst</h4>
-<div class="tw"><table>
-<tr><th>&nbsp;</th><th class="num">rain</th><th class="num">PET</th><th class="num">aridity index</th><th>normal year</th><th><b>El Niño (P×0.60)</b></th></tr>
-<tr class="win"><td><b>Arcabuco</b> · 2,600 m · 14.0 °C</td><td class="num">1,826 mm</td><td class="num">1,233 mm</td><td class="num"><b>1.48</b> humid</td><td>1 deficit month · 609 mm surplus</td><td><b>137 mm · 3 months</b></td></tr>
-<tr><td><b>Moniquirá</b> · 1,700 m · 18.8 °C</td><td class="num">1,860 mm</td><td class="num">1,421 mm</td><td class="num"><b>1.31</b> humid</td><td><b>0 deficit months</b> · 439 mm surplus</td><td><b>305 mm · 10 months</b></td></tr>
-</table></div>
-<p>In a <i>normal</i> year Moniquirá needs no defending — it is genuinely humid, with no deficit month at all and a 439 mm surplus. The gap opens in the <i>dry</i> year, and it opens because of heat rather than rainfall. For a 30-year horizon the drought year is the one that decides, and it is the same mechanism that produced Villa de Leyva's documented 2016 rationing.</p>
-<div class="fig"><img src="{I['fig_water']}" alt="Monthly water balance for all six sites"></div>
-
-<div class="callout warn"><b>A trap worth naming, because the number looks damning.</b> Corpoboyacá's POMCA lists a subcatchment called <b>"Río Moniquirá" at 1,127 mm/yr</b>, and flags it for the basin's highest water-use conflict and greatest shortage vulnerability. That is <i>not</i> Moniquirá's rainfall and <i>not</i> a verdict on the warm flank. That unit has a mean elevation of <b>2,560 m</b> and its child basins include <b>Río Sáchica</b> and <b>Río Cane</b> — it is the whole <b>Villa de Leyva</b> drainage, whose semi-arid highlands pull the average down. Its two worst-rated micro-basins are named as Río Sáchica and Río Cane, so the POMCA is independently confirming <i>Villa de Leyva's</i> water problem, which this project already documented. Moniquirá's own units read 1,827–1,896 mm.</div>
-
-<div class="callout warn"><b>The real Moniquirá water problem is potability, not quantity.</b> Of 23 rural supplies in the municipality, <b>only 3 have a working treatment plant</b>. All four aqueducts the Secretaría de Salud monitors are <b>IRCA "Riesgo Alto" with no potabilisation and no disinfection</b> — and one of them serves <b>Papayal</b>, which is parcel G's vereda and the source behind G's "punto de agua veredal" claim. The urban plant, by contrast, is IRCA 0.29%. Water here is abundant, not potable: budget for treatment.</div>
-
-<h4>2 · Terrain: the "flattest land" claim, measured</h4>
-<div class="tw"><table>
-<tr><th>in the parcel elevation band</th><th class="num">≤15° buildable</th><th class="num">median slope</th><th class="num"><b>&gt;25° steep</b></th></tr>
-<tr><td>Arcabuco / Gachantivá · 2,000–2,750 m</td><td class="num">68.1%</td><td class="num">10.5°</td><td class="num"><b>12.5%</b></td></tr>
-<tr class="win"><td>Moniquirá · 1,500–2,000 m</td><td class="num">77.6%</td><td class="num">10.2°</td><td class="num"><b>4.8%</b></td></tr>
-</table></div>
-<p>Copernicus GLO-30 (ESA, 30 m), restricted to the band where parcels actually trade so neither flank is scored against its own páramo tops or river gorges. The "Arcabuco is steep" impression comes from the whole-area figure (27.4% above 25°) — but that includes the Iguaque massif, where nothing is for sale. Cross-checked against POMCA's own mean-slope-per-unit table, which puts Arcabuco's Río Pómeca at 29.0% (16.2°) and the Moniquirá units at 17.4–23.7% (9.9–13.3°): two unrelated methods agree.</p>
-<div class="fig"><img src="{I['fig_slope']}" alt="Slope distribution, Arcabuco vs Moniquirá"></div>
-<p class="sm"><b>Limit:</b> listings are located at <i>vereda</i> level with no coordinates or cadastral boundaries, so this characterises the two <i>tracks</i>, not individual parcels. It still cannot tell you how many flat hectares G or C actually has.</p>
-
-<h4>3 · Services: Moniquirá's strongest card</h4>
-<p>The <b>Hospital Regional de Moniquirá E.S.E.</b> runs <b>Nivel I <i>and</i> II with 118 servicios habilitados</b>, plus four private IPS, clinical labs and rehabilitation. Departmental reporting through 2025–26 describes it consolidating as the referral centre for Ricaurte, Boyacá and southern Santander, moving into higher-complexity surgery. This corrects the original report, which treated Tunja as the only hospital anchor — and it improves the <i>highland</i> option too:</p>
-<div class="tw"><table>
-<tr><th>straight-line to nearest Nivel II+</th><th class="num">was (Tunja III)</th><th class="num">now (Moniquirá II)</th></tr>
-<tr><td>Arcabuco</td><td class="num">25.8 km</td><td class="num"><b>19.8 km</b></td></tr>
-<tr><td>Gachantivá</td><td class="num">31.9 km</td><td class="num"><b>13.6 km</b></td></tr>
-<tr><td>Santa Sofía</td><td class="num">33.2 km</td><td class="num"><b>18.3 km</b></td></tr>
-<tr class="win"><td>Moniquirá</td><td class="num">44.2 km</td><td class="num"><b>0 km</b></td></tr>
-</table></div>
-<p>Tunja remains Boyacá's only <b>Nivel III</b>, so it stays the anchor for genuinely complex care. Access is by <b>Ruta 62</b>, an INVÍAS national corridor, paved, condition "aceptable" — but the municipality rates <b>only ~40% of its own roads as optimal</b> across 268 km of tertiary rural road, so the last mile is the thing to check.</p>
-
-<h4>4 · Hazards: a wider set than the highland's</h4>
-<ul>
-<li><b>Wildfire — nobody had this on the list.</b> POMCA puts large areas of <b>high wildfire hazard</b> around Moniquirá, and those zones "rodean casi en su totalidad los cascos urbanos". Recurrent in veredas <b>Colorado Alto, Colorado Medio, Monjas Alto, Tierra de González, La Capilla and Coralina</b> — and there is a live listing in Colorado.</li>
-<li><b>Flood and avenidas torrenciales.</b> The Río Moniquirá overtops in the urban sector (meanders plus an occupied riverbed), critical in La Niña years, with 2011 events cited; flash floods from quebradas in rural and urban areas alike.</li>
-<li><b>Seismic.</b> NSR-10 <b>INTERMEDIA</b> ("zona de sismicidad media"); ~45 km to the nearest catalogued active fault vs Arcabuco's ~64 km — nearer, but both comfortable. <b>Exact Aa/Av still unverified.</b> The PDM itself flags widespread NSR-10 non-compliance in existing local building — which matters if you buy a house rather than build one.</li>
-</ul>
-
-<h4>5 · Legal: simpler in one way, harder in another</h4>
-<p><b>Simpler:</b> no national park, no delimited páramo, no heritage overlay — none of what gates every Arcabuco parcel. <b>Harder:</b> 13 municipal forest reserves, every one designated <i>Conservación Hídrica</i>, plus the Serranía El Peligro edge. <b>UAF is 9.38 ha</b>, so the same conclusion holds: buy <b>one titled parcel, held in a shared SAS</b>. (95% of Moniquirá's rural predios are already under 10 ha, so sub-UAF parcels trade freely — the UAF blocks new subdivision, not purchase.) The <b>EOT dates from 2004</b>, as dated as Arcabuco's.</p>
-<div class="callout warn"><b>Vereda-name collisions are a live trap.</b> Moniquirá's own vereda list contains <b>"La Hoya"</b> and <b>"La Capilla"</b> — the names under which parcels C (Gachantivá) and F (Villa de Leyva) were filed. Portal mis-tagging has already been caught repeatedly here. Verify the municipality on the matrícula, never the listing slug.</div>
-
-<h4>6 · Where the scorecard lands</h4>
-<div class="tw"><table>
-<tr><th>weighting</th><th>1st</th><th>2nd</th></tr>
-<tr><td>Default (brief priority)</td><td>Ricaurte 75.9</td><td><b>Moniquirá 74.7</b></td></tr>
-<tr><td>Climate-first</td><td>Ricaurte 75.0</td><td><b>Moniquirá 74.7</b></td></tr>
-<tr><td>Water-first</td><td>Ricaurte 77.7</td><td><b>Moniquirá 73.7</b></td></tr>
-<tr class="win"><td><b>Services &amp; airport-first</b></td><td><b>Moniquirá 72.9</b></td><td>Ricaurte 72.8</td></tr>
-<tr><td>Cost-first</td><td>Ricaurte 78.0</td><td><b>Moniquirá 76.5</b></td></tr>
-</table></div>
-<p><b>The lean is defensible.</b> Moniquirá is second by a hair almost everywhere, wins outright on services, and ties on climate to within 0.3 points. It loses clearly on exactly one axis — drought resilience. That is a trade to make consciously, not a reason to drop it. Play with the weights yourself on the <a href="scorecard.html">scorecard</a>.</p>
+<h2>What the regional analysis concluded</h2>
+<div class="callout key">This dossier is about <b>which parcel</b>. The question of <b>which flank</b> — the
+climate, the water balance, the terrain, the services, the hazards and the legal overlays — is
+worked through in full in the <a href="report.html">report, §5</a>. The short version, because it
+frames every parcel below:
+<br>• <b>Same rain, different thirst.</b> Both flanks get essentially the same rainfall (Moniquirá
+1,860 mm, Arcabuco 1,826 mm). Moniquirá is 4.8 °C warmer, so in a normal year it is comfortably
+humid with <i>zero</i> deficit months — but in an El Niño drought it goes to <b>10 deficit months
+against Arcabuco's 3</b>. Drought resilience is the one axis that separates them.
+<br>• <b>Terrain is nearly a tie.</b> Median slope where parcels actually trade is 10.2° on the warm
+flank against 10.5° in the highland. What differs is the tail: <b>Arcabuco holds 2.6× more land
+above 25°</b>. So it is not flat-versus-steep — it is that <b>on the highland, picking the right
+parcel matters much more</b>. That is the single most important thing to carry into the cards below.
+<br>• <b>Moniquirá has the hospital</b> (Nivel I+II, 118 services) — and it is the nearest
+second-level care for the Arcabuco veredas too.
+<br>• <b>Water is abundant but not potable</b> anywhere on the warm flank: of 23 rural supplies only
+three have working treatment. Budget a plant (COP 11–15.5 M) on any Moniquirá parcel.
+<br>• <b>Both municipalities have a ~9.4 ha subdivision floor (UAF)</b>, so unless you buy above it
+you are buying one titled parcel held jointly in an SAS.
+<br>What it would cost to build on the shortlist, and the community layout, are on the
+<a href="index.html">overview</a>.</div>
 
 <h2>Track 1 — Moniquirá, the warm flank (~1,700 m, ~19 °C)</h2>
 {WARM}

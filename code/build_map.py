@@ -18,15 +18,44 @@ SEC = {
  "La Mesa":         (4.6320,-74.4620, dict(g="teq",elev=1200,ai="~sub-humid",fault=35,bog=36,hosp="0.3 (Nivel II)",land="75–250k",note="Tequendama hub; Nivel II hospital in-town; priciest Tequendama land.")),
 }
 GCOL={"flank":"#2c7a4b","vdl":"#d9932b","dry":"#b0ب0b0".replace("ب","b"),"tunja":"#6c7a89","teq":"#3a7bd5"}
-# shortlisted real parcels (approx = vereda/municipio centroid; listings give no exact coords)
-PARCELS=[
- ("Gachantivá / La Hoya",5.762,-73.552,"COP 230M · 5.45 ha · 4,217/m²","bosque + fuentes de agua; Gachantivá–VdL road","fincaraiz.com.co/finca-en-venta-en-la-hoya-gachantiva/192743485"),
- ("Arcabuco / Peñas Blancas",5.757,-73.441,"COP 400M · 2.97 ha · 13,472/m²","quebrada + tanque potable; 1.3 km paved; glamping-ready","fincaraiz.com.co/finca-en-venta-en-arcabuco/193601271"),
- ("Santa Sofía / Salitrillo",5.716,-73.605,"COP 1,400M · 12 ha · 11,667/m²","nacimiento de agua; km6 to Moniquirá","fincaraiz.com.co/lote-en-venta-en-salitrillo-santa-sofia/191420156"),
- ("Villa de Leyva / Capilla",5.640,-73.520,"COP 800M · 6,511 m² · 122,869/m²","building license valid; stream adjoins","fincaraiz.com.co/lote-en-venta-en-capilla-villa-de-leyva/193768104"),
- ("Tena / Catalamonte",4.657,-74.393,"COP 1,750M · 24 ha · 7,292/m²","2 springs + 2 streams + native forest; 3 houses","fincaraiz.com.co/finca-en-venta-en-catalamonte-tena/193286551"),
- ("San Antonio Teq. / Vancouver",4.618,-74.352,"COP 1,200M · ~5.95 ha · 20,161/m²","paved road; lake ~0.25 ha; coffee/pine","fincaraiz.com.co/finca-en-venta-en-vancover-san-antonio-del-tequendama/193157803"),
- ("El Colegio / Vía La María",4.582,-74.446,"COP 329M · 5,000 m² · 65,800/m²","natural water + aqueduct; 10 min main road","fincaraiz.com.co/lote-en-venta-en-santo-tomas-el-colegio/193697149"),
+# Shortlisted parcels, grouped BY MUNICIPALITY at the municipal seat.
+# Deliberate: listings give vereda names only, never coordinates or cadastral boundaries, so a
+# per-parcel pin would be an invented position. Getting exact coords from the agencies is an open
+# item (see CLAUDE.md). Each pin's popup lists that municipality's live candidates.
+PARCEL_GROUPS = [
+ ("Moniquirá — the warm flank", 5.8759, -73.5733, [
+   ("H · geotech lote", "COP 720 M · 8.0 ha · 9,000/m²",
+    "Best building land found; soil + water studies handed over; fenced; negotiable",
+    "fincaraiz.com.co/lote-en-venta-en-moniquira/193363278"),
+   ("G · Papayal", "COP 390 M · 9.11 ha · 4,281/m²",
+    "Cheapest usable land; real quebrada — but limestone karst, and the vereda aqueduct is IRCA high-risk",
+    "fincaraiz.com.co/finca-en-venta-en-papayal-moniquira/192742687"),
+   ("N · finca panelera", "COP 1,700 M · 40.96 ha · 4,150/m²",
+    "Working trapiche + 2 houses + own aljibes; the ONLY candidate above the 9.38 ha UAF, so the only divisible one",
+    "fincaraiz.com.co/finca-en-venta-en-moniquira/192463144"),
+   ("K · Neval y Cruces lots", "COP 170 M · 5,000–8,821 m² each",
+    "Individually titled lots — each with its own matrícula; services already in",
+    "fincaraiz.com.co/lote-en-venta-en-neval-y-cruces-moniquira/193893121"),
+   ("E · San Cristóbal (⚠ mis-tagged)", "COP 750 M · 8.5 ha",
+    "Listing text says San Cristóbal, the URL says Neval y Cruces — verify on the matrícula",
+    "fincaraiz.com.co/finca-en-venta-en-neval-y-cruces-moniquira/192899845"),
+ ]),
+ ("Arcabuco — the cool highland", 5.7597, -73.4372, [
+   ("A · Peñas Blancas (with house)", "COP 400 M · 2.97 ha · 13,472/m²",
+    "4-bed casa campestre, fireplace, quebrada + potable tank; 1.3 km off the paved road",
+    "fincaraiz.com.co/finca-en-venta-en-arcabuco/193601271"),
+   ("B · Peñas Blancas (blank)", "COP 270 M · 2.43 ha · 11,102/m²",
+    "Cheapest highland; nacimiento + quebrada + reservorios; visibly browns off in the dry season",
+    "fincaraiz.com.co/finca-en-venta-en-arcabuco/192742902"),
+   ("D · Monte Suárez", "COP 1,600 M · 8.93 ha",
+    "Best finished house in the set — but its head touches SFF Iguaque. Clear the boundary first",
+    "fincaraiz.com.co/finca-en-venta-en-monte-suarez-arcabuco/192742895"),
+ ]),
+ ("Gachantivá — the cool highland", 5.7558, -73.5478, [
+   ("C · La Hoya", "COP 230 M · 5.45 ha · 4,216/m²",
+    "Lushest and wettest, with a visible spring — but dense bracken regrowth and a steep basin",
+    "fincaraiz.com.co/finca-en-venta-en-la-hoya-gachantiva/192743485"),
+ ]),
 ]
 REF={"El Dorado Intl (BOG)":(4.7016,-74.1469,"International gateway — the fly-in/out airport"),
      "Hosp. San Rafael Tunja (Nivel III)":(5.5410,-73.3560,"Only 3rd-level hospital in Boyacá"),
@@ -79,13 +108,22 @@ for name,(lat,lon,d) in SEC.items():
 fg_s.add_to(m)
 
 # shortlisted parcels
-fg_p=FeatureGroup(name="Shortlisted parcels (approx.)",show=True)
-for nm,lat,lon,price,feat,url in PARCELS:
-    html=(f"<b>{nm}</b><br>{price}<br><span style='color:#555'>{feat}</span><br>"
-          f"<a href='https://{url}' target='_blank'>listing ↗</a><br>"
-          f"<span style='color:#999;font-size:11px'>approx. location (vereda centroid — listing gives no exact coords)</span>")
-    Marker([lat,lon],icon=folium.Icon(color="green",icon="home",prefix="fa"),
-           popup=folium.Popup(html,max_width=280),tooltip=nm.split(" / ")[0]).add_to(fg_p)
+fg_p=FeatureGroup(name="Shortlisted parcels (by municipality)",show=True)
+for gname,glat,glon,items in PARCEL_GROUPS:
+    rows="".join(
+        f"<div style='margin:7px 0;padding-left:8px;border-left:3px solid #2c7a4b'>"
+        f"<b>{n}</b><br><span style='color:#b5613a'>{pr}</span><br>"
+        f"<span style='color:#555;font-size:12px'>{ft}</span><br>"
+        f"<a href='https://{u}' target='_blank'>listing &#8599;</a></div>"
+        for n,pr,ft,u in items)
+    html=(f"<b style='font-size:14px'>{gname}</b><br>"
+          f"<span style='color:#666;font-size:12px'>{len(items)} live candidate(s)</span>{rows}"
+          f"<div style='color:#999;font-size:11px;margin-top:6px'>Pin = municipal seat. Listings give "
+          f"vereda names only — no coordinates or cadastral boundaries — so parcels are NOT plotted "
+          f"individually. Exact coordinates are an open diligence item.</div>")
+    Marker([glat,glon],icon=folium.Icon(color="green",icon="home",prefix="fa"),
+           popup=folium.Popup(html,max_width=330),
+           tooltip=f"{gname} ({len(items)})").add_to(fg_p)
 fg_p.add_to(m)
 
 # reference points

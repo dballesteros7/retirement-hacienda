@@ -187,34 +187,33 @@ water in the bad years.</b></p>
 
 <h2>Four parcels worth arguing about</h2>
 <p class="sec-sub">Out of twelve we looked at properly — every photo, every listing, every agency.
-Six of them have sat unsold with one agency for a year, so nobody should be paying asking price.</p>
+Six have sat unsold with one agency for a year, so nobody should be paying asking price.
+<b>All twelve, with the photo-by-photo reads, are in the <a href="dossier.html">dossier</a>.</b></p>
 <div class="opts">%%CARDS%%</div>
 
-<h2>Water: the thing you can't fix after you build</h2>
+<h2>The two things the evidence actually turns on</h2>
+<p class="sec-sub">Short version here. The full workings — sources, methods, every number — are in
+the <a href="report.html">report</a>.</p>
 <div class="panel">
-  <p style="margin-top:0">Rain versus evaporation, month by month. Red means the ground is drawing
-  down more water than it receives. Villa de Leyva — the pretty one — is in deficit most of the
-  year and <b>rationed drinking water in 2016</b>. Both our flanks sit in surplus, which is why
-  they're the shortlist. The difference only shows up in a drought year.</p>
+  <p style="margin-top:0"><b>Water, and specifically drought.</b> Rain versus evaporation, month by
+  month; red means the ground is drawing down more than it receives. Villa de Leyva — the pretty
+  one — is in deficit most of the year and <b>rationed drinking water in 2016</b>. Both our flanks
+  sit in surplus, which is why they're the shortlist. The gap only opens in a bad year, and that's
+  the whole argument between them.</p>
   <img src="data:image/png;base64,%%WBFIG%%" alt="Monthly rainfall vs water demand for all six areas">
-  <p class="note"><b>And a warning that applies to every parcel on the warm flank:</b> the water is
-  abundant but <b>it is not drinkable as it arrives</b>. Of 23 rural water supplies in Moniquirá,
-  only three have a working treatment plant. All four that the health authority actually monitors
-  are rated <b>high risk</b> with no treatment and no disinfection — including the one serving
-  Papayal, which is exactly the "vereda water point" that parcel G advertises. This is solvable,
-  and we've costed it: a plant sized for four houses runs <b>COP 11–15.5 M</b>, plus about
-  <b>600,000 a year</b> to maintain. Budget it. Don't assume it.</p>
-</div>
-
-<h2>Is it actually flat enough to build on?</h2>
-<div class="panel">
-  <p style="margin-top:0">We pulled the real elevation data — 30 m satellite terrain — and measured
-  the slope where parcels are actually sold, rather than across the whole mountain. The surprise:
-  <b>the two flanks are nearly identical</b>. Typical ground is about 10° on both. What differs is
-  the bad end: <b>Arcabuco has two and a half times more genuinely steep land</b>. So it isn't
-  "flat versus steep" — it's that up in the highland, <b>picking the right parcel matters much
-  more</b>, because you're far likelier to be shown something difficult.</p>
+  <p style="margin-top:18px"><b>Terrain — and this one surprised us.</b> We pulled real 30 m
+  satellite elevation and measured the slope where parcels are actually sold, rather than across
+  the whole mountain. <b>The two flanks are nearly identical</b> — typical ground is about 10° on
+  both. What differs is the bad end: <b>Arcabuco has two and a half times more genuinely steep
+  land</b>. So it isn't "flat versus steep". It's that in the highland, <b>picking the right parcel
+  matters much more</b>, because you're likelier to be shown something difficult.</p>
   <img src="data:image/png;base64,%%SLFIG%%" alt="Slope distribution in the parcel elevation band, Arcabuco vs Moniquirá">
+  <p class="note"><b>One warning that applies to every warm-flank parcel:</b> the water is abundant
+  but <b>not drinkable as it arrives</b>. Of 23 rural supplies in Moniquirá only three have a
+  working treatment plant, and all four the health authority monitors are rated <b>high risk</b>
+  with no treatment at all — including the one behind parcel G's "vereda water point". Solvable,
+  and costed below: about <b>COP 11–15.5 M</b> for a plant, plus <b>600,000 a year</b>. Budget it,
+  don't assume it.</p>
 </div>
 
 <h2>Weigh it yourself</h2>
@@ -282,6 +281,22 @@ but <b>Moniquirá wins on services</b>, and on climate the two are 0.3 points ap
     <li><b>Then, and only then, make an offer</b> — well under asking, on anything that's been
     sitting for a year.</li>
   </ol>
+</div>
+
+<h2>Want to go deeper?</h2>
+<div class="panel">
+  <p style="margin-top:0">This page is the short version. Each of the others answers one question:</p>
+  <ul>
+    <li><a href="report.html"><b>The report</b></a> — <i>why here?</i> The regional case: climate,
+    water, terrain, services, hazards and law, how the five options rank, and every source.
+    Section 5 is the full Moniquirá analysis.</li>
+    <li><a href="dossier.html"><b>The dossier</b></a> — <i>which parcel?</i> All twelve candidates,
+    every photograph reviewed, with what to verify on each before an offer.</li>
+    <li><a href="scorecard.html"><b>The scorecard</b></a> — <i>what if we weight it differently?</i>
+    Move the sliders yourself and watch the ranking change.</li>
+    <li><a href="map.html"><b>The map</b></a> — <i>where is all this?</i> Municipalities, faults,
+    candidate sectors and the parcels, on real terrain.</li>
+  </ul>
 </div>
 
 <div class="foot">This is decision-support, not advice, and nothing here has been verified on the

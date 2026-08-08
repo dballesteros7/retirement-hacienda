@@ -45,13 +45,27 @@ Adding Moniquirá as its own unit means the wet flank **no longer wins every wei
 
 ## 2. Repo layout
 
+**Site architecture (harmonised 2026-08-08 — keep it this way).** The five pages had drifted into
+re-arguing each other; each now answers exactly one question, and a shared nav with a you-are-here
+state links them. When adding content, put it on the page that owns the question:
+
+| page | its one question | owns |
+|---|---|---|
+| `index.html` | **the decision** | framing, 4-parcel shortlist, build costs, the community masterplan, next steps |
+| `report.html` | **why here** | ALL regional evidence — climate, water, terrain, services, hazards, legal, the ranking, sources. §5 is the full Moniquirá analysis |
+| `dossier.html` | **which parcel** | 12 candidates, photo-by-photo reads, per-parcel diligence |
+| `scorecard.html` | **what if we weight it differently** | the interactive tool only |
+| `map.html` | **where** | geography; parcels grouped by municipality, not plotted individually (no coords exist yet) |
+
+Summaries that point at the owner page are fine; re-arguing the case is not.
+
 ```
 /                        repo root = the PUBLISHED SITE (GitHub Pages serves from main / root)
-  index.html             overview (friend-facing landing page)
-  report.html            full site-selection report
+  index.html             the decision — shortlist, costs, community plan
+  report.html            why here — regional evidence + ranking (§5 = Moniquirá)
   scorecard.html         interactive weighted scorecard
   map.html               interactive Leaflet map
-  dossier.html           Arcabuco property dossier (9 parcels, photos)
+  dossier.html           which parcel — 12 candidates, photos reviewed
   CLAUDE.md              this file
   build.sh               regenerates every artifact, then copies the site to root
   requirements.txt
