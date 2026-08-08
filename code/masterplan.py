@@ -24,7 +24,8 @@ EURCOP = 4300
 
 # --- programme -------------------------------------------------------------------------------
 CASA_COMUNAL_M2 = 160     # shared kitchen/dining/living + 2 guest rooms + laundry + workshop
-SATELLITE_M2    = 80      # private house per household
+SATELLITE_M2    = 120     # private house per household (raised from 80 on 2026-08-08 — 80 was
+                          # too small for a home you actually retire into, not a guest cabin)
 N_SATELLITES    = 3
 HOUSEHOLDS      = 3
 BUILT_M2 = CASA_COMUNAL_M2 + N_SATELLITES * SATELLITE_M2
@@ -163,6 +164,21 @@ print(f"  {'TOTAL':58s} COP {sum(run.values())/M:6.1f} M/yr  "
       f"({sum(run.values())/HOUSEHOLDS/M:.1f} M per household)")
 json.dump({k: v for k, v in run.items()}, open('outputs/masterplan_running.json', 'w'))
 
+# headline figures consumed by code/build_overview.py — single source of truth for the page
+HEAD = dict(
+    casa_comunal_m2=CASA_COMUNAL_M2, satellite_m2=SATELLITE_M2, n_satellites=N_SATELLITES,
+    built_m2=BUILT_M2, households=HOUSEHOLDS, eurcop=EURCOP,
+    total_M=round(tot / M), per_household_M=round(tot / HOUSEHOLDS / M),
+    per_household_eur=round(tot / HOUSEHOLDS / EURCOP),
+    live_after_phase2_M=round(_live), live_after_phase2_each_M=round(_live / HOUSEHOLDS),
+    live_after_phase2_each_eur=round(_live * M / HOUSEHOLDS / EURCOP),
+    running_M=round(sum(run.values()) / M, 1),
+    running_each_M=round(sum(run.values()) / HOUSEHOLDS / M, 1),
+    build_M={k: round(budget(v).cop.sum() / M) for k, v in PARCELS.items()},
+    land_M={k: round(v['ask'] / M) for k, v in PARCELS.items()},
+)
+json.dump(HEAD, open('outputs/masterplan_headline.json', 'w'), indent=1)
+
 # --- figures ---------------------------------------------------------------------------------
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -200,16 +216,18 @@ for tx, ty in [(185, 156), (91, 116), (235, 100), (249, 212)]:
 # casa comunal, centre
 ax.add_patch(FancyBboxPatch((165, 138), 40, 34, boxstyle='round,pad=3',
                             fc='#b5613a', ec='w', lw=2, zorder=6))
-ax.text(185, 130, 'CASA COMUNAL · 160 m²', ha='center', va='top', fontsize=8,
+ax.text(185, 130, f'CASA COMUNAL · {CASA_COMUNAL_M2} m²', ha='center', va='top', fontsize=8,
         weight='bold', color='#7a3d22', zorder=7)
 
-# three satellites at privacy distance
-sats = [((78, 100), 'casa 1 · 80 m²'), ((222, 84), 'casa 2 · 80 m²'), ((236, 196), 'casa 3 · 80 m²')]
+# three satellites at privacy distance; footprint drawn proportional to floor area
+sats = [((76, 98), f'casa 1 · {SATELLITE_M2} m²'), ((220, 82), f'casa 2 · {SATELLITE_M2} m²'),
+        ((234, 194), f'casa 3 · {SATELLITE_M2} m²')]
+_w = 26 * (SATELLITE_M2 / 80) ** 0.5
 for (sx, sy), lbl in sats:
-    ax.add_patch(FancyBboxPatch((sx, sy), 26, 22, boxstyle='round,pad=2.5',
+    ax.add_patch(FancyBboxPatch((sx, sy), _w, _w * 0.85, boxstyle='round,pad=2.5',
                                 fc='#5b7a5b', ec='w', lw=1.8, zorder=6))
-    ax.text(sx + 13, sy - 7, lbl, ha='center', va='top', fontsize=7.4, color='#3f5f3f', zorder=7)
-    ax.plot([sx + 13, 185], [sy + 11, 155], color='#c9b79c', lw=1.1, ls='--', zorder=1)
+    ax.text(sx + _w / 2, sy - 7, lbl, ha='center', va='top', fontsize=7.4, color='#3f5f3f', zorder=7)
+    ax.plot([sx + _w / 2, 185], [sy + _w * 0.42, 155], color='#c9b79c', lw=1.1, ls='--', zorder=1)
 
 # septic fields, downhill and well clear of the quebrada
 for ex, ey in [(60, 150), (255, 40), (270, 245)]:

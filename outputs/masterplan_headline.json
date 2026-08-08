@@ -1,0 +1,26 @@
+{
+ "casa_comunal_m2": 160,
+ "satellite_m2": 120,
+ "n_satellites": 3,
+ "built_m2": 520,
+ "households": 3,
+ "eurcop": 4300,
+ "total_M": 3320,
+ "per_household_M": 1107,
+ "per_household_eur": 257382,
+ "live_after_phase2_M": 2220,
+ "live_after_phase2_each_M": 740,
+ "live_after_phase2_each_eur": 172054,
+ "running_M": 26.4,
+ "running_each_M": 8.8,
+ "build_M": {
+  "H": 3320,
+  "G": 3020,
+  "N": 4481
+ },
+ "land_M": {
+  "H": 720,
+  "G": 390,
+  "N": 1700
+ }
+}

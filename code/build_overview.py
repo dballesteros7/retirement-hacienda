@@ -24,6 +24,17 @@ mp = b64("outputs/fig_masterplan.png")
 phases = pd.read_csv("outputs/masterplan_phases.csv")
 summary = pd.read_csv("outputs/masterplan_summary.csv")
 H = summary[summary.parcel == "H"].iloc[0]
+# every build figure on this page comes from code/masterplan.py — never retype them here,
+# or the page silently drifts from the model the moment a programme assumption changes.
+K = json.load(open("outputs/masterplan_headline.json"))
+
+
+def cop(m):
+    return f"{m:,.0f} M"
+
+
+def build_only(p):
+    return K["build_M"][p] - K["land_M"][p]
 
 # ---------------------------------------------------------------- the four real options ------
 OPTIONS = [
@@ -36,7 +47,8 @@ OPTIONS = [
           "over.</b> That is the single most valuable document in the whole search — every other parcel "
           "would have to pay for it, and it is the study that tells you whether you can actually build. "
           "The listing also says outright that the price is negotiable.",
-      cost="Land 720 M + roughly 2,070 M to build the community (below) ≈ <b>2,790 M all-in</b>.",
+      cost=f"Land {cop(K['land_M']['H'])} + about {cop(build_only('H'))} to build the community (below) "
+            f"≈ <b>{cop(K['build_M']['H'])} all-in</b>.",
       check="Read the existing soil and water studies first — they are why you would pay the premium "
             "over Papayal. Then the last 2 km of unpaved access, and the title.",
       url="https://www.fincaraiz.com.co/lote-en-venta-en-moniquira/193363278"),
@@ -46,8 +58,9 @@ OPTIONS = [
             "stream running over cobbles in deep shade — the water in the photos is genuinely there.",
       why="Best price per usable hectare anywhere in the search, and it has been sitting unsold with "
           "the same agency for <b>twelve months</b>.",
-      cost="Land 390 M + about 2,100 M to build ≈ <b>2,490 M all-in</b> — including a "
-           "<b>45 M karst contingency</b> the other parcels do not need.",
+      cost=f"Land {cop(K['land_M']['G'])} + about {cop(build_only('G'))} to build "
+            f"≈ <b>{cop(K['build_M']['G'])} all-in</b> — including a "
+            "<b>45 M karst contingency</b> the other parcels do not need.",
       check="<b>The photos show limestone karst</b> — a deep rock ravine, an exposed outcrop with a cave "
             "recess. That means possible voids under foundations, groundwater that moves fast and "
             "unpredictably, and septic fields that can reach the aquifer quickly. Get a geotechnical and "
@@ -63,8 +76,8 @@ OPTIONS = [
           "<b>only parcel we found above the 9.38 ha legal subdivision floor</b>. That matters enormously: "
           "everywhere else, the group has to buy one parcel and hold it jointly through a company. Here "
           "each family could own its own titled plot. It has also been on the market fourteen months.",
-      cost="Land 1,700 M + about 2,250 M ≈ <b>3,950 M all-in</b> — but you are buying an income and "
-           "existing buildings alongside the land.",
+      cost=f"Land {cop(K['land_M']['N'])} + about {cop(build_only('N'))} ≈ <b>{cop(K['build_M']['N'])} all-in</b> "
+            "— but you are buying an income and existing buildings alongside the land.",
       check="Whether the cane operation is genuinely running or just standing. Soil quality claims. And "
             "get a surveyor to confirm the 41 ha before assuming the subdivision maths works.",
       url="https://www.fincaraiz.com.co/finca-en-venta-en-moniquira/192463144"),
@@ -231,14 +244,14 @@ but <b>Moniquirá wins on services</b>, and on climate the two are 0.3 points ap
 <div class="dream">
   <p style="margin-top:0;font-size:16px">One <b>casa comunal</b> in the middle — the big kitchen,
   the long table, the fire, a couple of guest rooms for whoever's visiting, the laundry and the
-  workshop. Then <b>three private houses</b> scattered around it at 90–140 m, far enough that you
+  workshop. Then <b>%%NSATW%% private houses</b> of %%SATM2%% m² each, scattered around it at 90–140 m, far enough that you
   can't hear each other, close enough to walk over for dinner without thinking about it. Everything
   fed by gravity from one tank uphill, so the water works when the power doesn't.</p>
 
   <div class="prog">
-    <div class="pill"><div class="n">160 m²</div><div class="l">casa comunal</div></div>
-    <div class="pill"><div class="n">3 × 80 m²</div><div class="l">private houses</div></div>
-    <div class="pill"><div class="n">400 m²</div><div class="l">built in total</div></div>
+    <div class="pill"><div class="n">%%CCM2%% m²</div><div class="l">casa comunal</div></div>
+    <div class="pill"><div class="n">%%NSAT%% × %%SATM2%% m²</div><div class="l">private houses</div></div>
+    <div class="pill"><div class="n">%%BUILT%% m²</div><div class="l">built in total</div></div>
     <div class="pill"><div class="n">~4 ha</div><div class="l">of the 8 used</div></div>
   </div>
 
@@ -257,11 +270,11 @@ but <b>Moniquirá wins on services</b>, and on climate the two are 0.3 points ap
     %%PHASES%%
   </table></div>
   <p class="note">Three households sharing. <b>After phase 2 you are living on the land</b> — the
-  communal house and the first private house are finished — for roughly <b>COP 680 M each</b>
-  (≈ EUR 158,000 at the 2026 average rate). The last two houses can wait for whenever. All-in,
-  finished, on parcel H: about <b>COP 2,790 M</b> — near enough <b>COP 930 M (≈ EUR 216,000) per
-  household</b>. Running costs land around <b>COP 26 M a year</b> for everything including a
-  part-time caretaker, which is under <b>9 M each</b>.</p>
+  communal house and the first private house are finished — for roughly <b>COP %%LIVEEACH%% M each</b>
+  (≈ EUR %%LIVEEACHEUR%% at the 2026 average rate). The last two houses can wait for whenever. All-in,
+  finished, on parcel H: about <b>COP %%TOTAL%% M</b> — near enough <b>COP %%PERHH%% M (≈ EUR %%PERHHEUR%%) per
+  household</b>. Running costs land around <b>COP %%RUN%% M a year</b> for everything including a
+  part-time caretaker, which is under <b>%%RUNEACH%% M each</b>.</p>
   <p class="note">These are 2026 published Colombian rates, not quotes — rural building swings
   hugely with access and ground conditions. Treat them as a budget envelope for the conversation,
   ±30%, and get real quotes before anyone transfers anything.</p>
@@ -319,6 +332,17 @@ function renderAll(){renderPresets();renderWeights();renderBars()}
 renderAll();
 </script>
 </div></body></html>"""
+
+NUM = {"%%CCM2%%": K["casa_comunal_m2"], "%%SATM2%%": K["satellite_m2"],
+       "%%NSAT%%": K["n_satellites"], "%%BUILT%%": K["built_m2"],
+       "%%NSATW%%": {1: "one", 2: "two", 3: "three", 4: "four"}.get(K["n_satellites"], K["n_satellites"]),
+       "%%TOTAL%%": f'{K["total_M"]:,}', "%%PERHH%%": f'{K["per_household_M"]:,}',
+       "%%PERHHEUR%%": f'{K["per_household_eur"]:,}',
+       "%%LIVEEACH%%": f'{K["live_after_phase2_each_M"]:,}',
+       "%%LIVEEACHEUR%%": f'{K["live_after_phase2_each_eur"]:,}',
+       "%%RUN%%": K["running_M"], "%%RUNEACH%%": K["running_each_M"]}
+for _k, _v in NUM.items():
+    HTML = HTML.replace(_k, str(_v))
 
 out = (HTML.replace("%%CARDS%%", cards).replace("%%PHASES%%", phase_rows)
            .replace("%%PAYLOAD%%", payload).replace("%%WBFIG%%", wb)

@@ -1,8 +1,8 @@
 item,cop,parcel
 Land (asking price),1700000000.0,N
 "Purchase costs (notary/registry/beneficencia, 2.5%)",42500000.0,N
-Construction — 400 m² (finished),1470000000.0,N
-Design + licencia de construcción,73500000.0,N
+Construction — 520 m² (finished),1911000000.0,N
+Design + licencia de construcción,95550000.0,N
 Building pads / earthworks,20000000.0,N
 Internal access track,25000000.0,N
 Perimeter fencing,20000000.0,N
@@ -13,4 +13,4 @@ Septic — 4 systems,28000000.0,N
 Grid connection (EBSA),0.0,N
 Solar PV 5 kWp + 5 kWh battery,32000000.0,N
 Starlink hardware,1599000.0,N
-Contingency 15%,515039850.0,N
+Contingency 15%,584497350.0,N
