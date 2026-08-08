@@ -71,7 +71,11 @@ PILL = ("<style>.mapnav{position:fixed;top:12px;left:50%;transform:translateX(-5
         "box-shadow:0 2px 10px rgba(0,0,0,.25)}"
         ".mapnav a{color:#e8efe6;text-decoration:none;font-size:12.5px;padding:4px 11px;border-radius:14px}"
         ".mapnav a:hover{background:rgba(255,255,255,.15)}"
-        ".mapnav a.here{background:#fff;color:#3f5f3f;font-weight:700}</style>")
+        ".mapnav a.here{background:#fff;color:#3f5f3f;font-weight:700}"
+        # folium puts its layer control top-right and zoom top-left; drop both below the pill
+        ".leaflet-top.leaflet-right{margin-top:48px}"
+        "@media(max-width:760px){.leaflet-top.leaflet-left{margin-top:48px}}"
+        "</style>")
 mp = open("outputs/hacienda_map.html", encoding="utf-8").read()
 pill_links = "".join(f"<a href='{h}' class='{'here' if h == 'map.html' else ''}'>{lbl}</a>"
                      for h, lbl, _ in PAGES)
